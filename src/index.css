@@ -16,3 +16,9 @@ code {
   text-align: center;
   color: orangered;
 }
+
+.icon-review {
+  font-size: 3rem;
+  margin-top: 1rem;
+  color: var(--clr-primary-5);
+}
