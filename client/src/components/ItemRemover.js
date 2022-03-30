@@ -8,13 +8,16 @@ import { removeItem } from '../actions'
 import React from 'react'
 import { connect } from 'react-redux'
 
-let ItemRemover = ({dispatch}) => {
+let ItemRemover = ({ dispatch }) => {
   return (
     <MuiThemeProvider>
       <div>
-        <IconButton aria-label="remove" tooltip="remove" 
-          onTouchTap={ () => dispatch(removeItem()) }>
-          <Remove color={grey500}/>
+        <IconButton
+          aria-label="remove"
+          tooltip="remove"
+          onTouchTap={() => dispatch(removeItem())}
+        >
+          <Remove color={grey500} />
         </IconButton>
       </div>
     </MuiThemeProvider>

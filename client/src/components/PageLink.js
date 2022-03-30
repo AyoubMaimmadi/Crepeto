@@ -4,13 +4,13 @@ import { setPage } from '../actions'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    active: ownProps.page === state.inventoryPage
+    active: ownProps.page === state.inventoryPage,
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onClick: () => dispatch(setPage(ownProps.page))
+    onClick: () => dispatch(setPage(ownProps.page)),
   }
 }
 

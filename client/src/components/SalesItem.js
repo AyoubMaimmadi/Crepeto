@@ -12,9 +12,8 @@ export const SalesItem = ({
   handleEditSalesItem,
   handleEditSalesItemQty,
   handleEditSalesItemAmount,
-  handleRemoveSalesItem
+  handleRemoveSalesItem,
 }) => {
-
   const style = {
     input: {
       width: '100%',
@@ -30,44 +29,52 @@ export const SalesItem = ({
       borderRadius: 2,
     },
     menuContainerStyle: {
-      zIndex: 100
+      zIndex: 100,
     },
   }
 
   return (
     <tr key={salesItem.id}>
-      <td>{index+1}</td>
+      <td>{index + 1}</td>
       <td style={style.td_select}>
-        <Select name="item" style={style.select}
+        <Select
+          name="item"
+          style={style.select}
           menuContainerStyle={style.menuContainerStyle}
           clearable={false}
           value={salesItem.item_id}
           onChange={handleEditSalesItem}
-          options={items.map(item => ({value: item.id, label: item.name}))}
+          options={items.map((item) => ({ value: item.id, label: item.name }))}
         />
       </td>
       <td className="numeric">
-        <input type="number"
+        <input
+          type="number"
           className="numeric"
           onChange={handleEditSalesItemQty}
-          onFocus={(evt) => { evt.target.select() }}
+          onFocus={(evt) => {
+            evt.target.select()
+          }}
           value={salesItem.qty}
-          style={style.input}/>
+          style={style.input}
+        />
       </td>
+      <td className="numeric">{salesItem.price}</td>
       <td className="numeric">
-        {salesItem.price}
-      </td>
-      <td className="numeric">
-        <input type="number"
+        <input
+          type="number"
           className="numeric"
           onChange={handleEditSalesItemAmount}
-          onFocus={(evt) => { evt.target.select() }}
+          onFocus={(evt) => {
+            evt.target.select()
+          }}
           value={salesItem.amount}
-          style={style.input}/>
+          style={style.input}
+        />
       </td>
       <td className="numeric">
         <IconButton onClick={handleRemoveSalesItem} aria-label="cancel">
-          <Cancel color={grey500}/>
+          <Cancel color={grey500} />
         </IconButton>
       </td>
     </tr>

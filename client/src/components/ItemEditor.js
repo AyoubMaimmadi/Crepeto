@@ -9,14 +9,24 @@ import { editItem, toggleEditItemDialog } from '../actions'
 import React from 'react'
 import { connect } from 'react-redux'
 
-export const ItemEditor = ({item, editItemDialog, handleToggleDialog, handleEditItem}) => {
+export const ItemEditor = ({
+  item,
+  editItemDialog,
+  handleToggleDialog,
+  handleEditItem,
+}) => {
   return (
     <MuiThemeProvider>
       <div>
-        <IconButton aria-label="edit" tooltip="edit" onTouchTap={handleToggleDialog}>
-          <Edit color={grey500}/>
+        <IconButton
+          aria-label="edit"
+          tooltip="edit"
+          onTouchTap={handleToggleDialog}
+        >
+          <Edit color={grey500} />
         </IconButton>
-        <EditDialog open={editItemDialog} 
+        <EditDialog
+          open={editItemDialog}
           handleToggleDialog={handleToggleDialog}
           handleEditItem={handleEditItem}
           item={item}
@@ -31,7 +41,8 @@ const mapStateToProps = (state) => state
 const mapDispatchToProps = (dispatch) => {
   return {
     handleToggleDialog: () => dispatch(toggleEditItemDialog()),
-    handleEditItem: (id, name, unitCost, unitPrice, qty) => dispatch(editItem(id, name, unitCost, unitPrice, qty)),
+    handleEditItem: (id, name, unitCost, unitPrice, qty) =>
+      dispatch(editItem(id, name, unitCost, unitPrice, qty)),
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ItemEditor)
