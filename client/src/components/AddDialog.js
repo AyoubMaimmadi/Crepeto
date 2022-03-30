@@ -1,11 +1,11 @@
 import Dialog from 'material-ui/Dialog'
-import FlatButton from 'material-ui/FlatButton';
-import TextField from 'material-ui/TextField';
+import FlatButton from 'material-ui/FlatButton'
+import TextField from 'material-ui/TextField'
 
 import React from 'react'
 
-export const AddDialog = ({open, handleToggleDialog, handleAddItem}) => {
-  let item = {};
+export const AddDialog = ({ open, handleToggleDialog, handleAddItem }) => {
+  let item = {}
 
   const actions = [
     <FlatButton
@@ -20,22 +20,22 @@ export const AddDialog = ({open, handleToggleDialog, handleAddItem}) => {
         handleAddItem(item.name, item.unitCost, item.unitPrice, item.qty)
         handleToggleDialog()
       }}
-    />
+    />,
   ]
 
   const styles = {
     hintStyle: {
-      color: 'rgba(0,0,0,0.6)'
+      color: 'rgba(0,0,0,0.6)',
     },
     underlineStyle: {
-      borderColor: 'rgba(0,0,0,0.4)'
+      borderColor: 'rgba(0,0,0,0.4)',
     },
     form: {
-      display: 'flex'
+      display: 'flex',
     },
     style: {
       marginLeft: 24,
-    }
+    },
   }
 
   return (
@@ -47,29 +47,37 @@ export const AddDialog = ({open, handleToggleDialog, handleAddItem}) => {
       onRequestClose={handleToggleDialog}
     >
       <div style={styles.form}>
-        <TextField hintText="name"
-          onChange={(evt) => item.name = evt.target.value}
+        <TextField
+          hintText="name"
+          onChange={(evt) => (item.name = evt.target.value)}
           autoFocus
           hintStyle={styles.hintStyle}
-          underlineStyle={styles.underlineStyle} />
-        <TextField hintText="unit cost"
-          onChange={(evt) => item.unitCost = evt.target.value}
+          underlineStyle={styles.underlineStyle}
+        />
+        <TextField
+          hintText="unit cost"
+          onChange={(evt) => (item.unitCost = evt.target.value)}
           type="number"
           style={styles.style}
           hintStyle={styles.hintStyle}
-          underlineStyle={styles.underlineStyle} />
-        <TextField hintText="unit price"
-          onChange={(evt) => item.unitPrice = evt.target.value}
+          underlineStyle={styles.underlineStyle}
+        />
+        <TextField
+          hintText="unit price"
+          onChange={(evt) => (item.unitPrice = evt.target.value)}
           type="number"
           style={styles.style}
           hintStyle={styles.hintStyle}
-          underlineStyle={styles.underlineStyle} />
-        <TextField hintText="quantity"
-          onChange={(evt) => item.qty = evt.target.value}
+          underlineStyle={styles.underlineStyle}
+        />
+        <TextField
+          hintText="quantity"
+          onChange={(evt) => (item.qty = evt.target.value)}
           type="number"
           style={styles.style}
           hintStyle={styles.hintStyle}
-          underlineStyle={styles.underlineStyle} />
+          underlineStyle={styles.underlineStyle}
+        />
       </div>
     </Dialog>
   )
