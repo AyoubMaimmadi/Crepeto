@@ -6,10 +6,10 @@
 }
 
 @media screen and (min-width: 900px) {
-    .AppContent {
-      width: 70%;
-      margin: 0 auto;
-    }
+  .AppContent {
+    width: 70%;
+    margin: 0 auto;
+  }
 }
 
 .nav-button {
@@ -22,8 +22,9 @@
   outline: none;
 }
 
-.nav-button:focus, .nav-button:hover {
-  background: rgba(1,1,1,0.1);
+.nav-button:focus,
+.nav-button:hover {
+  background: rgba(1, 1, 1, 0.1);
 }
 
 .active {
@@ -44,16 +45,17 @@ tbody > tr:last-child {
   border: none;
 }
 
-th, td {
+th,
+td {
   padding: 8px;
   text-align: left;
-  color: rgba(1,1,1,0.5);
+  color: rgba(1, 1, 1, 0.5);
   font-size: 13px;
   height: 32px;
 }
 
 td {
-  color: rgba(1,1,1,0.8);
+  color: rgba(1, 1, 1, 0.8);
   font-size: 14px;
 }
 
@@ -67,7 +69,7 @@ table input.numeric {
 
 .card {
   background: #fff;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 2px 16px;
   border-radius: 2px;
 }
@@ -94,5 +96,5 @@ table input.numeric {
 
 h1 {
   font-size: 24px;
-  color: #607D8B;
+  color: #607d8b;
 }
