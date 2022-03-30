@@ -1,6 +1,6 @@
 # Crepeto
 
-## Database Project using React: (JS/MU/PSQL/...)
+## Database Project using React: (JS/MUI/PSQL/...)
 
 ## Allows the manager the have full managerial control over his business
 
