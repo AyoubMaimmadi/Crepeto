@@ -5,28 +5,30 @@ import PageLink from './PageLink'
 import React from 'react'
 import { connect } from 'react-redux'
 
-let AppHeader = ({inventoryPage}) => {
-
+let AppHeader = ({ inventoryPage }) => {
   const color = (inventoryPage) => {
-    return "#607D8B"
+    return '#607D8B'
   }
 
   const style = {
-    title : {
+    title: {
       marginLeft: 36,
     },
-    bar : {
+    bar: {
       background: color(inventoryPage),
-      paddingRight: 60
-    }
+      paddingRight: 60,
+    },
   }
 
   return (
     <MuiThemeProvider>
-      <AppBar title="Inventory Management System"
+      <AppBar
+        title="Crepeto"
         showMenuIconButton={false}
         titleStyle={style.title}
-        style={style.bar}>
+        style={style.bar}
+      >
+        {/* <PageLink page="INVENTORY_PAGE">Employees</PageLink> */}
         <PageLink page="INVENTORY_PAGE">Inventory</PageLink>
         <PageLink page="HISTORY_PAGE">History</PageLink>
         <PageLink page="INVOICE_PAGE">Invoice</PageLink>
@@ -35,4 +37,4 @@ let AppHeader = ({inventoryPage}) => {
   )
 }
 
-export default connect(state => state, null)(AppHeader)
+export default connect((state) => state, null)(AppHeader)
