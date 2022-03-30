@@ -2,8 +2,7 @@ import { InventoryItem } from './InventoryItem'
 import { partial } from '../lib/utils'
 import { toggleSelectItem } from '../actions'
 
-
-import ItemAdder  from './ItemAdder'
+import ItemAdder from './ItemAdder'
 import ItemRemover from './ItemRemover'
 import ItemEditor from './ItemEditor'
 import { ItemSelector } from './ItemSelector'
@@ -11,11 +10,11 @@ import { ItemSelector } from './ItemSelector'
 import React from 'react'
 import { connect } from 'react-redux'
 
-const getSelectedItem = (items) => items.find(t => t.selected)
+const getSelectedItem = (items) => items.find((t) => t.selected)
 
-let InventoryList = ({items, handleInputChange, handleSelectItem}) => {
+let InventoryList = ({ items, handleInputChange, handleSelectItem }) => {
   const style = {
-    flex: 2
+    flex: 2,
   }
   return (
     <div style={style}>
@@ -24,7 +23,9 @@ let InventoryList = ({items, handleInputChange, handleSelectItem}) => {
           <h1>Inventory</h1>
           <span>
             <ItemAdder />
-            {getSelectedItem(items) && <ItemEditor item={getSelectedItem(items)}/>}
+            {getSelectedItem(items) && (
+              <ItemEditor item={getSelectedItem(items)} />
+            )}
             <ItemRemover />
           </span>
         </div>
@@ -41,9 +42,13 @@ let InventoryList = ({items, handleInputChange, handleSelectItem}) => {
             </tr>
           </thead>
           <tbody>
-            {items.map(item => <InventoryItem key={item.id} {...item}
-              handleSelectItem={ partial(handleSelectItem, item.id) }
-            />)}
+            {items.map((item) => (
+              <InventoryItem
+                key={item.id}
+                {...item}
+                handleSelectItem={partial(handleSelectItem, item.id)}
+              />
+            ))}
           </tbody>
         </table>
       </div>
@@ -58,6 +63,5 @@ const mapDispatchToProps = (dispatch) => {
     handleSelectItem: (id) => dispatch(toggleSelectItem(id)),
   }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(InventoryList)

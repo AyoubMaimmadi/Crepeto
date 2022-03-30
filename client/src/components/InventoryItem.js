@@ -4,15 +4,14 @@ import React from 'react'
 
 export const InventoryItem = ({
   id,
-  name, 
-  unitCost, 
-  unitPrice, 
-  qty, 
-  selectedAmount, 
-  selected, 
-  handleSelectItem
+  name,
+  unitCost,
+  unitPrice,
+  qty,
+  selectedAmount,
+  selected,
+  handleSelectItem,
 }) => {
-
   return (
     <tr>
       <td>

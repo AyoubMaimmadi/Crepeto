@@ -9,14 +9,19 @@ import { toggleAddItemDialog, addItem } from '../actions'
 import React from 'react'
 import { connect } from 'react-redux'
 
-let ItemAdder = ({addItemDialog, handleToggleDialog, handleAddItem}) => {
+let ItemAdder = ({ addItemDialog, handleToggleDialog, handleAddItem }) => {
   return (
     <MuiThemeProvider>
       <div>
-        <IconButton aria-label="add" tooltip="add" onTouchTap={handleToggleDialog}>
-          <Add color={grey500}/>
+        <IconButton
+          aria-label="add"
+          tooltip="add"
+          onTouchTap={handleToggleDialog}
+        >
+          <Add color={grey500} />
         </IconButton>
-        <AddDialog open={addItemDialog} 
+        <AddDialog
+          open={addItemDialog}
           handleToggleDialog={handleToggleDialog}
           handleAddItem={handleAddItem}
         />
@@ -30,7 +35,8 @@ const mapStateToProps = (state) => state
 const mapDispatchToProps = (dispatch) => {
   return {
     handleToggleDialog: () => dispatch(toggleAddItemDialog()),
-    handleAddItem: (name, unitCost, unitPrice, qty) => dispatch(addItem(name, unitCost, unitPrice, qty)),
+    handleAddItem: (name, unitCost, unitPrice, qty) =>
+      dispatch(addItem(name, unitCost, unitPrice, qty)),
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ItemAdder)
