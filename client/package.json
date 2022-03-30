@@ -1,23 +1,27 @@
 {
-  "name": "redux-inventory",
+  "name": "inventory-app",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "axios": "^0.17.1",
-    "chart.js": "^2.7.1",
-    "react": "^16.2.0",
-    "react-bootstrap": "^0.31.5",
-    "react-chartjs-2": "^2.6.4",
-    "react-dom": "^16.2.0",
-    "react-icons": "^2.2.7",
-    "react-redux": "^5.0.6",
-    "react-scripts": "1.0.17",
-    "redux": "^3.7.2",
+  "devDependencies": {
+    "react-scripts": "0.8.5",
+    "redux-devtools": "^3.4.1",
     "redux-thunk": "^2.2.0"
   },
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "material-ui": "^0.17.3",
+    "node-uuid": "^1.4.8",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.6",
+    "react-select": "^1.2.1",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.7.2",
+    "reselect": "^3.0.1"
+  },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

@@ -1,25 +1,40 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
-import { Provider } from 'react-redux'
-import authReducer from './store/reducers/authReducer'
-import mainReducer from './store/reducers/mainReducer'
-import thunk from 'redux-thunk'
-import './index.css'
 import App from './App'
-import registerServiceWorker from './registerServiceWorker'
+import './index.css'
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk'
+import { Provider } from 'react-redux'
+import { items, inventoryPage, addItemDialog, editItemDialog, historys, salesItems, newInvoice } from './reducers'
+import { loadState, saveState } from './localStorage'
+import throttle from 'lodash/throttle'
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-
-const rootReducer = combineReducers({
-    auth: authReducer,
-    main: mainReducer
+const reducer = combineReducers({
+  items, inventoryPage, addItemDialog, editItemDialog, historys, salesItems, newInvoice
 })
 
+const persistedState = loadState()
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const store = createStore(
-    rootReducer,
-    composeEnhancers(applyMiddleware(thunk))
+  reducer,
+  persistedState,
+  composeEnhancers(
+    applyMiddleware(thunk)
+  )
 )
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'))
-registerServiceWorker()
+store.subscribe(throttle(() => {
+  saveState({
+    items: store.getState().items,
+    historys: store.getState().historys
+  })
+}, 1000))
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider> ,
+  document.getElementById('root')
+);
