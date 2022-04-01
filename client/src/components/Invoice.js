@@ -104,7 +104,7 @@ let Invoice = ({
       name: 'Rabii Lamharzi',
       phone: '0665756613',
       value: (
-        <MenuItem primaryText="Ayoub Maimmadi" secondaryText="0665756613" />
+        <MenuItem primaryText="Rabii Lamharzi" secondaryText="0665756613" />
       ),
     },
     {
@@ -115,7 +115,9 @@ let Invoice = ({
     {
       name: 'Imane Ettabae',
       phone: '0665756613',
-      value: <MenuItem primaryText="Hiba Akhadar" secondaryText="0665756613" />,
+      value: (
+        <MenuItem primaryText="Imane Ettabaer" secondaryText="0665756613" />
+      ),
     },
   ]
 
