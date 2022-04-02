@@ -95,30 +95,30 @@ let Invoice = ({
   const names = [
     {
       name: 'Ayoub Maimmadi',
-      phone: '0665756613',
+      phone: '06 37 55 98 77',
       value: (
         <MenuItem primaryText="Ayoub Maimmadi" secondaryText="0665756613" />
       ),
     },
-    {
-      name: 'Rabii Lamharzi',
-      phone: '0665756613',
-      value: (
-        <MenuItem primaryText="Rabii Lamharzi" secondaryText="0665756613" />
-      ),
-    },
-    {
-      name: 'Hiba Akhadar',
-      phone: '0665756613',
-      value: <MenuItem primaryText="Hiba Akhadar" secondaryText="0665756613" />,
-    },
-    {
-      name: 'Imane Ettabae',
-      phone: '0665756613',
-      value: (
-        <MenuItem primaryText="Imane Ettabaer" secondaryText="0665756613" />
-      ),
-    },
+    // {
+    //   name: 'Rabii Lamharzi',
+    //   phone: '06 37 55 98 77',
+    //   value: (
+    //     <MenuItem primaryText="Rabii Lamharzi" secondaryText="0665756613" />
+    //   ),
+    // },
+    // {
+    //   name: 'Hiba Akhadar',
+    //   phone: '06 37 55 98 77',
+    //   value: <MenuItem primaryText="Hiba Akhadar" secondaryText="0665756613" />,
+    // },
+    // {
+    //   name: 'Imane Ettabae',
+    //   phone: '06 37 55 98 77',
+    //   value: (
+    //     <MenuItem primaryText="Imane Ettabaer" secondaryText="0665756613" />
+    //   ),
+    // },
   ]
 
   const total = salesItems
