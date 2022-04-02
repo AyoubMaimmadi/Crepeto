@@ -1,4 +1,4 @@
-# Crepeto (Still in production)
+# Crepeto (Still In Production)
 
 ## Database Project using React: (JS/MUI/PSQL/...)
 
