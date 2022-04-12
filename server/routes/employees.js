@@ -48,3 +48,5 @@ router.post('/inventory/add', (req, res) => {
     }
   )
 })
+
+module.exports = router
