@@ -30,6 +30,26 @@ const PageHeader = ({ path }) => {
         >
           Inventory
         </Link>
+        <Link
+          className={
+            path === '/employees'
+              ? 'page-header__link  page-header__link--active'
+              : 'page-header__link'
+          }
+          to="/employees"
+        >
+          Employees
+        </Link>
+        <Link
+          className={
+            path === '/customers'
+              ? 'page-header__link  page-header__link--active'
+              : 'page-header__link'
+          }
+          to="/customers"
+        >
+          Customers
+        </Link>
       </div>
     </nav>
   )
