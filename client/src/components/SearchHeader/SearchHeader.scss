@@ -1,73 +1,71 @@
-@use "../../partials/_colors" as *;
-@use "../../partials/typographys" as *;
-@use "../../partials/mixins" as *;
-@use "../../partials/spacings" as *;
-@use "../../partials/variables" as *;
+@use '../../partials/_colors' as *;
+@use '../../partials/typographys' as *;
+@use '../../partials/mixins' as *;
+@use '../../partials/spacings' as *;
+@use '../../partials/variables' as *;
 
-.search-header{
-    @include element-block;
+.search-header {
+  @include element-block;
+  width: 100%;
+  padding-top: $medium-space;
+  @include tablet {
+    @include flex-row {
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    color: $primary-color-black;
+    margin: 0;
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+  &__form {
+    position: relative;
     width: 100%;
-    padding-top: $medium-space;
-    @include tablet{
-        @include flex-row{
-            justify-content: space-between;
-            align-items: center;
-        };
+    &::before {
+      content: '';
+      z-index: 5;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 1.5rem;
+      right: 1rem;
+      background-image: url('../../assets/Icons/search-24px.svg');
+      @include tablet {
+        right: 12.5rem;
+        top: 0.5rem;
+      }
     }
-    
-    
-    &__title{
-        color: $primary-color-black;
-        margin: 0;
 
-        @include tablet{
-            margin: 0;
-        }
+    @include tablet {
+      @include flex-row;
+      width: 55%;
     }
-    &__form{
-        position: relative;
-        width: 100%;
-         &::before{
-                content: "";
-                z-index: 5;
-                position: absolute;
-                width: 25px;
-                height: 25px; 
-                top: 1.5rem;
-                right: 1rem;
-                background-image: url("../../assets/Icons/search-24px.svg");
-                @include tablet{
-                    right: 12.5rem;
-                    top: 0.5rem;
-                }
-            }
-    
-        @include tablet{
-            @include flex-row;
-            width: 55%; 
-        }
 
-        &-input{
-            @include formfield;
-            width: 100%;
-            margin: $regular-space 0;
-            padding-right:$medium-space;
+    &-input {
+      @include formfield;
+      width: 100%;
+      margin: $regular-space 0;
+      padding-right: $medium-space;
 
-            @include tablet{
-                width: 50%;
-                margin:0 $regular-space 0 auto;
-                padding-right:3rem;
-                height: 2.375rem;
-            }
-            @include desktop{
-                width: 60%;
-            }
-        }
-    
-        &-submit{
-            @include button;
-            @include button-cta;
-        }
-        
+      @include tablet {
+        width: 50%;
+        margin: 0 $regular-space 0 auto;
+        padding-right: 3rem;
+        height: 2.375rem;
+      }
+      @include desktop {
+        width: 60%;
+      }
     }
+
+    &-submit {
+      @include button;
+      @include button-cta;
+    }
+  }
 }
