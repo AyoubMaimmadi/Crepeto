@@ -1,0 +1,53 @@
+@use "../../partials/_colors" as *;
+@use "../../partials/typographys" as *;
+@use "../../partials/mixins" as *;
+@use "../../partials/spacings" as *;
+@use "../../partials/variables" as *;
+
+
+.main-header{
+    @include element-block;
+    border-bottom: $divider;
+    @include flex-row{
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__left{
+        @include flex-row{
+            justify-content: flex-start;
+            
+        }
+    }
+
+    &__img{
+        cursor: pointer;
+    }
+
+    &__title{
+        margin-left: $small-space;
+    }
+    
+
+    &__right{
+        &-button{
+            @include button-cta;
+            @include button;
+            @include flex-row{
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            color: $white;
+        }
+        &-text{
+            display: none;
+            @include tablet{
+                display: block;
+            }
+        }
+    }
+
+    &__link{
+        text-decoration: none;
+    }
+}

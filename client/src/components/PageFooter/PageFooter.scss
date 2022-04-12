@@ -1,0 +1,24 @@
+@use '../../partials/colors' as *;
+@use '../../partials/typographys' as *;
+@use '../../partials/variables' as *;
+@use '../../partials/spacings' as *;
+@use '../../partials/mixins' as *;
+
+.page-footer{
+    background-color: $background-color-grey;
+    padding: $max-space 0;
+
+    @include tablet {
+        padding: $max-space*2 0 $max-space;
+    }
+
+    @include desktop {
+        padding: $max-space*3 0 $max-space;
+    }
+
+    &__text{
+        @include small-body-text;
+        color:$secondary-color-slate;
+        text-align: center;
+    }
+}

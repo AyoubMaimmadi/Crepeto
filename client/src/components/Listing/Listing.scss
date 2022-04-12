@@ -1,0 +1,23 @@
+@use "../../partials/_colors" as *;
+@use "../../partials/typographys" as *;
+@use "../../partials/mixins" as *;
+@use "../../partials/spacings" as *;
+@use "../../partials/variables" as *;
+
+
+
+.listing{
+    @include element-body;
+
+    &__labels-container{
+        background-color: $background-color-grey;
+        box-sizing: border-box;
+        width: 100%;
+        display: none;
+        @include tablet{
+            @include flex-row;
+            @include element-block;
+            justify-content:space-between;
+        } 
+    }
+}

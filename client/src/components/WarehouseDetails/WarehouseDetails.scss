@@ -1,0 +1,55 @@
+@use "../../partials/_colors" as *;
+@use "../../partials/typographys" as *;
+@use "../../partials/mixins" as *;
+@use "../../partials/variables" as *;
+@use "../../partials/spacings" as *;
+
+
+.warehouseDetail{
+    @include element-body;
+    
+    &__wrapper{
+        @include element-block;
+        @include flex-row{
+            flex-wrap: wrap;
+        }
+
+        @include tablet{
+            flex-wrap: nowrap;
+        }
+
+        @include desktop{
+            margin-left: 0.5rem;
+        }
+    }
+
+    &__detail-container{
+        width: 50%;
+        margin-top: 1rem;
+
+        @include tablet{
+            width: 40%;
+            margin: 0 0 0 2.5rem;
+        }
+
+        &--primary{
+            width: 100%;
+            margin:0;
+
+            @include tablet{
+                width: 60%;
+                border-right: $divider;
+            }
+        }
+    }
+
+    &__title{
+        color:$secondary-color-slate;
+        margin-bottom: $min-space;
+    }
+
+    &__text{
+        @include medium-body-text;
+    }
+
+}

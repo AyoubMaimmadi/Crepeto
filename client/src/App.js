@@ -1,42 +1,29 @@
-import React from 'react'
+import './App.scss';
+import React, {Component} from "react";
+import {BrowserRouter, Route, Switch} from "react-router-dom"
+import WarehousePage from "./pages/WarehousePage/WarehousePage";
+import InventoryPage from './pages/InventoryPage/InventoryPage';
 
-import injectTapEventPlugin from 'react-tap-event-plugin'
-injectTapEventPlugin()
 
-import AppHeader from './components/AppHeader'
-import InventoryList from './components/InventoryList'
-import HistoryList from './components/HistoryList'
-import Invoice from './components/Invoice'
-import Page from './components/Page'
 
-import './App.css'
 
-const App = () => {
+
+class App extends Component{
+  
+  render(){
   return (
-    <div>
-      <div className="App">
-        <AppHeader />
+    <div className="app__body">
+      <BrowserRouter>
+      <Switch>
+          
+          <Route path="/inventory" component={InventoryPage}/>
+          <Route path="/" component={WarehousePage}/>
 
-        <Page path="INVENTORY_PAGE">
-          <div className="AppContent">
-            <InventoryList className="InventoryList" />
-          </div>
-        </Page>
-
-        <Page path="HISTORY_PAGE">
-          <div className="AppContent">
-            <HistoryList />
-          </div>
-        </Page>
-
-        <Page path="INVOICE_PAGE">
-          <div className="AppContent">
-            <Invoice />
-          </div>
-        </Page>
-      </div>
+      </Switch>
+      </BrowserRouter>
+    
     </div>
-  )
+  )}
 }
 
-export default App
+export default App;
