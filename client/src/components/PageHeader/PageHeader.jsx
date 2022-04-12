@@ -18,7 +18,7 @@ const PageHeader = ({ path }) => {
           }
           to="/"
         >
-          Warehouses
+          Vendors
         </Link>
         <Link
           className={
