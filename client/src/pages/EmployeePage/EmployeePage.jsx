@@ -7,7 +7,8 @@ import Footer from '../../components/PageFooter/PageFooter'
 import './InventoryPage.scss'
 import Modal from '../../components/Modal/Modal'
 import InventoryForm from '../../components/InventoryForm/InventoryForm'
-import InventoryDetail from '../../components/InventoryDetail/InventoryDetail'
+import EmployeeForm from '../../components/EmployeeForm/EmployeeForm'
+import EmployeeDetail from '../../components/EmployeeDetail/EmployeeDetail'
 
 class EmployeePage extends Component {
   state = {
@@ -109,16 +110,13 @@ class EmployeePage extends Component {
               />
               <Route
                 path="/employees/:employeeId/detail"
-                component={InventoryDetail}
+                component={EmployeeDetail}
               />
               <Route
                 path="/employees/add"
                 render={(routeProps) => {
                   return (
-                    <InventoryForm
-                      {...routeProps}
-                      updateData={this.updateNewFormData}
-                    />
+                    <Form {...routeProps} updateData={this.updateNewFormData} />
                   )
                 }}
               />
@@ -126,7 +124,7 @@ class EmployeePage extends Component {
                 path="/employees/:employeeId/edit"
                 render={(routeProps) => {
                   return (
-                    <InventoryForm
+                    <EmployeeForm
                       {...routeProps}
                       updateData={this.updateNewFormData}
                     />
@@ -141,3 +139,5 @@ class EmployeePage extends Component {
     )
   }
 }
+
+export default EmployeePage
