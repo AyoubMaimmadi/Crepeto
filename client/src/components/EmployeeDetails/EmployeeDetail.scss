@@ -1,0 +1,53 @@
+@use '../../partials/_colors' as *;
+@use '../../partials/typographys' as *;
+@use '../../partials/mixins' as *;
+@use '../../partials/spacings' as *;
+@use '../../partials/variables' as *;
+
+.inventoryDetail {
+  @include element-body;
+
+  &__wrapper {
+    @include element-block;
+    @include tablet {
+      @include flex-row;
+    }
+  }
+  &__left {
+    @include tablet {
+      flex: 1 1 0px;
+      border-right: $divider;
+      padding-right: $max-space;
+    }
+    &-title {
+      margin-bottom: $small-space;
+      color: $secondary-color-slate;
+    }
+  }
+  &__right {
+    @include flex-row;
+    &-title {
+      margin-bottom: 0rem;
+      color: $secondary-color-slate;
+    }
+
+    @include tablet {
+      flex: 1 1 0px;
+      padding: 0 $max-space;
+    }
+    &-section {
+      flex: 1 1 0px;
+    }
+  }
+  &__text {
+    @include medium-body-text;
+    margin-bottom: $medium-space;
+
+    &--stock {
+      @include tag-in-stock;
+    }
+    &--nostock {
+      @include tag-stock-out;
+    }
+  }
+}
