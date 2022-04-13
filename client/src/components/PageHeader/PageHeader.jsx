@@ -1,4 +1,3 @@
-import logo from '../../assets/logo/inStock-logo.png'
 import { Link } from 'react-router-dom'
 import './PageHeader.scss'
 
@@ -36,19 +35,29 @@ const PageHeader = ({ path }) => {
               ? 'page-header__link  page-header__link--active'
               : 'page-header__link'
           }
-          to="/employees"
+          to="/"
         >
           Employees
         </Link>
         <Link
           className={
-            path === '/customers'
+            path === '/sdsf'
+              ? 'page-header__link page-header__link--active'
+              : 'page-header__link'
+          }
+          to="/"
+        >
+          Customer
+        </Link>
+        <Link
+          className={
+            path === '/qdqd'
               ? 'page-header__link  page-header__link--active'
               : 'page-header__link'
           }
-          to="/customers"
+          to="/"
         >
-          Customers
+          Order
         </Link>
       </div>
     </nav>

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Component } from 'react'
 import './InventoryDetail.scss'
-import { URL } from '../../utils/api'
+import { URL } from '../../utils/api1'
 import MainHeader from '../MainHeader/MainHeader'
 
 class InventoryDetail extends Component {
@@ -10,7 +10,7 @@ class InventoryDetail extends Component {
   }
   componentDidMount = () => {
     axios
-      .get(`${URL}/inventory/${this.props.match.params.inventoryId}`)
+      .get(`${URL}/inventory1/${this.props.match.params.inventory1Id}`)
       .then((res) => this.setState({ inventoryItem: res.data[0] }))
       .catch((err) => console.log(err))
   }

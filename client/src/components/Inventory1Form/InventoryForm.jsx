@@ -30,13 +30,13 @@ class InventoryForm extends Component {
         })
       })
       .catch((err) => console.log(err))
-    axios.get(`/api/inventory`).then((res) => {
+    axios.get(`/api/inventory1`).then((res) => {
       res.data.map((item) => categories.push(item.category))
     })
 
     if (this.props.match.params.inventoryId) {
       axios
-        .get(`/api/inventory/${this.props.match.params.inventoryId}`)
+        .get(`/api/inventory1/${this.props.match.params.inventoryId}`)
         .then((res) => {
           const {
             category,
@@ -94,7 +94,7 @@ class InventoryForm extends Component {
       addInventory(data)
         .then((res) => {
           alert('Inventory Item Added')
-          this.props.history.push('/inventory')
+          this.props.history.push('/inventory1')
           this.props.updateData()
         })
         .catch((err) => console.log(err))
@@ -114,7 +114,7 @@ class InventoryForm extends Component {
       )
 
       axios
-        .put(`${URL}/inventory/${id}/edit`, {
+        .put(`${URL}/inventory1/${id}/edit`, {
           id: id,
           category: category,
           description: description,
@@ -126,7 +126,7 @@ class InventoryForm extends Component {
         })
         .then((res) => {
           alert('Inventory Item Edited')
-          this.props.history.push('/inventory')
+          this.props.history.push('/inventory1')
           this.props.updateData()
         })
         .catch((err) => console.log(err))
@@ -137,7 +137,7 @@ class InventoryForm extends Component {
 
   handleCancel = (e) => {
     e.preventDefault()
-    this.props.history.push('/inventory')
+    this.props.history.push('/inventory1')
   }
 
   render() {
