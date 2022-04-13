@@ -25,6 +25,7 @@ class EmployeeDetail extends Component {
           editInventoryId={this.state.employeeItem.id}
           navigate={this.props}
         />
+
         <div className="inventoryDetail__wrapper">
           <div className="inventoryDetail__left">
             <section className="inventoryDetail__left-section">
