@@ -3,9 +3,13 @@ const cors = require('cors')
 const app = express()
 
 //routes goes here
+const employeesRoutes = require('./routes/employees')
+
 const warehouseRoutes = require('./routes/warehouse')
 const inventoryRoutes = require('./routes/inventory')
-const employeesRoutes = require('./routes/employees')
+
+const warehouse1Routes = require('./routes/warehouse1')
+const inventory1Routes = require('./routes/inventory1')
 
 //env variables
 require('dotenv').config()
@@ -17,9 +21,13 @@ app.use(express.static('public'))
 app.use(cors())
 
 //endoints
+app.use('/api', employeesRoutes)
+
 app.use('/api', warehouseRoutes)
 app.use('/api', inventoryRoutes)
-app.use('/api', employeesRoutes)
+
+app.use('/api', warehouse1Routes)
+app.use('/api', inventory1Routes)
 
 //listening on port 8080
 app.listen(port, () => {
