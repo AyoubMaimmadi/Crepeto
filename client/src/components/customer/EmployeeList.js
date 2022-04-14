@@ -21,12 +21,20 @@ class EmployeeList extends Component {
         id: 1,
         name: 'Ayoub Maimmadi',
         email: 'ayoubmaimmadi@gmail.com',
-        role: 'Waiter',
+        role: 'Manager',
         status: 'Active',
         joined_at: '20th August, 2022',
       },
       {
         id: 2,
+        name: 'Ayoub Maimmadi',
+        email: 'ayoubmaimmadi@gmail.com',
+        role: 'Waiter',
+        status: 'Active',
+        joined_at: '20th August, 2022',
+      },
+      {
+        id: 3,
         name: 'Hiba Akhadar',
         email: 'HibaAkhada987@gmail.com',
         role: 'Chef',
@@ -36,9 +44,9 @@ class EmployeeList extends Component {
     ]
 
     this.roleData = [
-      { id: 1, name: 'Admin' },
-      { id: 2, name: 'Sales' },
-      { id: 3, name: 'Editor' },
+      { id: 1, name: 'Manager' },
+      { id: 2, name: 'Waiter' },
+      { id: 3, name: 'Chef' },
     ]
   }
 

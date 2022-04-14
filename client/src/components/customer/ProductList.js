@@ -48,8 +48,8 @@ class ProductList extends Component {
 
     this.selectData = [
       { id: 1, name: 'Sweets' },
-      { id: 2, name: 'Sweets' },
-      { id: 3, name: 'Cakes' },
+      { id: 2, name: 'Cakes' },
+      { id: 3, name: 'Food' },
     ]
   }
 

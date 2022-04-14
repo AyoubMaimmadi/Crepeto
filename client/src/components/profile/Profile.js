@@ -39,7 +39,7 @@ class Profile extends Component {
                     <input
                       type="text"
                       className="form-control form-control-sm"
-                      value="a.maimmadi@aui.ma"
+                      value="   A.Maimmadi@aui.ma"
                       readOnly
                     />
                   </div>

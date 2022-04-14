@@ -10,15 +10,15 @@ class ProductForm extends Component {
     this.productCategory = [
       {
         id: 1,
-        name: 'Computer Accessories',
+        name: 'Sweets',
       },
       {
         id: 2,
-        name: 'Kitchen & Dining',
+        name: 'Cakes',
       },
       {
         id: 2,
-        name: 'Watch & Sunglasses',
+        name: 'Food',
       },
     ]
   }
@@ -51,7 +51,7 @@ class ProductForm extends Component {
                 <div className="col-6">
                   <SelectFormGroup
                     labelClassName="mb-2"
-                    label="Role"
+                    label="Category"
                     selectClassName="custom-select my-1 mr-sm-2"
                     selectData={this.productCategory}
                   />
