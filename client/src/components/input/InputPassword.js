@@ -1,19 +1,23 @@
-import React, {Component} from "react";
+import React, { Component } from 'react'
 
+class InputPassword extends Component {
+  constructor(props) {
+    super(props)
+  }
 
-class InputPassword extends Component{
-    constructor(props){
-        super(props);
-    }
-
-
-    render(){
-        return <input type="password" className={this.props.className} placeholder={this.props.placeholder}/>
-    }
+  render() {
+    return (
+      <input
+        type="password"
+        className={this.props.className}
+        placeholder={this.props.placeholder}
+      />
+    )
+  }
 }
 
 InputPassword.defaultProps = {
-    placeholder: ""
+  placeholder: '',
 }
 
-export default InputPassword;
+export default InputPassword
