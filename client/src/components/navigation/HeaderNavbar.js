@@ -8,9 +8,9 @@ class HeaderNavBar extends Component {
     this.userRole = 'admin'
     var navbarText = ''
     if (this.userRole == 'admin') {
-      this.navbarText = 'Inventory Management (Admin Portal)'
+      this.navbarText = 'Crepeto'
     } else {
-      this.navbarText = 'Inventory Management'
+      this.navbarText = 'Crepeto'
     }
   }
 
