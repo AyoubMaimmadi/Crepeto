@@ -22,7 +22,7 @@ class ProductCategoryView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="Md Nazmul"
+                      value="Sweets"
                       readOnly
                     />
                   </div>
@@ -33,7 +33,7 @@ class ProductCategoryView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="125"
+                      value="12"
                       readOnly
                     />
                   </div>

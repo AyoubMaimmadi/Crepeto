@@ -18,7 +18,7 @@ class ShopEdit extends Component {
   }
 
   handleShopUpdate = () => {
-    this.setState({ successMessage: 'Shop info updated!' })
+    this.setState({ successMessage: 'Restaurant info updated!' })
     this.setState({ showSuccessMsg: true })
   }
 
@@ -51,7 +51,7 @@ class ShopEdit extends Component {
     return (
       <div className="admin-content mx-auto">
         <div className="w-100 mb-5">
-          <h4>Shop Details</h4>
+          <h4>Restaurant Details</h4>
         </div>
         <div className="w-75">
           <div className="container-fluid">
@@ -60,7 +60,7 @@ class ShopEdit extends Component {
 
               <div className="col-12 mt-3">
                 <p>
-                  <b>Shop Information</b>
+                  <b>Restaurant Information</b>
                 </p>
               </div>
               <div className="col-6">
@@ -68,8 +68,8 @@ class ShopEdit extends Component {
                   labelClassName="mb-2"
                   onChange={this.handleOnChange}
                   inputClassName="form-control"
-                  label="Shop Name"
-                  value="Digital Camera Shop"
+                  label="Restaurant Name"
+                  value="Crepeto"
                 />
               </div>
 
@@ -77,7 +77,7 @@ class ShopEdit extends Component {
                 <div className="form-group">
                   <AnchorTag
                     className="btn btn-sm btn-warning mr-3"
-                    itemValue="View Shop"
+                    itemValue="View Restaurant"
                     link="/app/shop/view"
                   />
                   <input

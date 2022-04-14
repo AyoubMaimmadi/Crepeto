@@ -46,7 +46,7 @@ class ProductView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="Health & Beauty"
+                      value="Sweets"
                       readOnly
                     />
                   </div>
@@ -57,7 +57,7 @@ class ProductView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="1205"
+                      value="32.00"
                       readOnly
                     />
                   </div>
@@ -68,7 +68,7 @@ class ProductView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="1000"
+                      value="38.00"
                       readOnly
                     />
                   </div>
@@ -79,18 +79,18 @@ class ProductView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="234"
+                      value="20"
                       readOnly
                     />
                   </div>
                 </div>
                 <div className="col-6">
                   <div className="form-group">
-                    <label className="mb-2">Product Visibilty Status</label>
+                    <label className="mb-2">Product Availability</label>
                     <input
                       type="text"
                       className="form-control"
-                      value="Public"
+                      value="Available"
                       readOnly
                     />
                   </div>
