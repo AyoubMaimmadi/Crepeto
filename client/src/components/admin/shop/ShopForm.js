@@ -15,9 +15,9 @@ class ShopForm extends Component {
           <AnchorTag
             link="/admin/settings/user-list"
             className="btn btn-primary float-right"
-            itemValue="Back to Shop List"
+            itemValue="Back to Vendor List"
           ></AnchorTag>
-          <h4>Create Shop</h4>
+          <h4>Create Vendor</h4>
         </div>
         <div className="w-75">
           <form>
@@ -25,7 +25,7 @@ class ShopForm extends Component {
               <div className="row">
                 <div className="col-12">
                   <p>
-                    <b>Shop Owner Information</b>
+                    <b>Vendor Information</b>
                   </p>
                 </div>
                 <div className="col-6">
@@ -48,12 +48,12 @@ class ShopForm extends Component {
                 </div>
                 <div className="col-12">
                   <p>
-                    <b>Shop Information</b>
+                    <b>Vendor Information</b>
                   </p>
                 </div>
                 <div className="col-6">
                   <div className="form-group">
-                    <label className="mb-2">Shop Name</label>
+                    <label className="mb-2">Vendor Name</label>
                     <input type="text" className="form-control" />
                   </div>
                 </div>
