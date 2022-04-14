@@ -105,7 +105,7 @@ class ShopView extends Component {
                   <div className="form-group">
                     <AnchorTag
                       className="btn btn-sm btn-warning"
-                      itemValue="Edit Shop"
+                      itemValue="Edit Restaurant"
                       link="/app/shop/edit"
                     />
                   </div>

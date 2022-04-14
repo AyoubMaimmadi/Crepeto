@@ -4,8 +4,7 @@ import AnchorTag from '../../components/Anchortag'
 class ProductView extends Component {
   constructor(props) {
     super(props)
-    this.productDetails =
-      "PERFECT GIFT IDEA: Works on wet, dry, Long, short, thick, curly, and straight hair. Perfect gift for Valentines Day, Mother's Day, Thanksgiving, Christmas, Anniversary and Birthday to your girlfriend, wife, mom, sister and friends. NOTE: Paddle brush is designed to have one missing pin on the bottom of the cushion. This is to help with air circulation and is not a product defect."
+    this.productDetails = 'Lorem Ipsum dollar sit amet.'
   }
 
   render() {

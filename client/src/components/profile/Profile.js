@@ -39,7 +39,7 @@ class Profile extends Component {
                     <input
                       type="text"
                       className="form-control form-control-sm"
-                      value="hasan08sust@gmail.com"
+                      value="a.maimmadi@aui.ma"
                       readOnly
                     />
                   </div>
@@ -50,7 +50,7 @@ class Profile extends Component {
                     <input
                       type="text"
                       className="form-control form-control-sm"
-                      value="Sales"
+                      value="Manager"
                       readOnly
                     />
                   </div>
@@ -61,7 +61,7 @@ class Profile extends Component {
                     <input
                       type="text"
                       className="form-control form-control-sm"
-                      value="23rd August, 2021"
+                      value="23rd April, 2022"
                       readOnly
                     />
                   </div>
