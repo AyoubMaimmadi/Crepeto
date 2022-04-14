@@ -16,7 +16,7 @@ class ShopView extends Component {
             className="btn btn-primary float-right"
             itemValue="Back to Shop List"
           ></AnchorTag>
-          <h4>Shop Details</h4>
+          <h4>Restaurant Details</h4>
         </div>
         <div className="w-75">
           <form>
@@ -24,7 +24,7 @@ class ShopView extends Component {
               <div className="row">
                 <div className="col-12">
                   <p>
-                    <b>Shop Owner Information</b>
+                    <b>Restaurant Owner Information</b>
                   </p>
                 </div>
                 <div className="col-6">
@@ -33,7 +33,7 @@ class ShopView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="Md Nazmul"
+                      value="Ayoub"
                       readOnly
                     />
                   </div>
@@ -44,7 +44,7 @@ class ShopView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="Hasan"
+                      value="Maimmadi"
                       readOnly
                     />
                   </div>
@@ -55,7 +55,7 @@ class ShopView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="hasan08sust@gmail.com"
+                      value="ayoubmaimmadi@gmail.com"
                       readOnly
                     />
                   </div>
@@ -74,16 +74,16 @@ class ShopView extends Component {
 
                 <div className="col-12">
                   <p>
-                    <b>Shop Information</b>
+                    <b>Restaurant Information</b>
                   </p>
                 </div>
                 <div className="col-6">
                   <div className="form-group">
-                    <label className="mb-2">Shop Name</label>
+                    <label className="mb-2">Restaurant Name</label>
                     <input
                       type="text"
                       className="form-control"
-                      value="Digital Camera Shop"
+                      value="Crepeto"
                       readOnly
                     />
                   </div>
@@ -94,7 +94,7 @@ class ShopView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="25"
+                      value="3"
                       readOnly
                     />
                   </div>
@@ -105,7 +105,7 @@ class ShopView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="245"
+                      value="145"
                       readOnly
                     />
                   </div>

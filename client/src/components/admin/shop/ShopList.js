@@ -32,9 +32,9 @@ class ShopList extends Component {
           <AnchorTag
             link="/admin/shop/shop-create"
             className="btn btn-warning float-right"
-            itemValue="Create Shop"
+            itemValue="Create Vendor"
           ></AnchorTag>
-          <h4>Shop List</h4>
+          <h4>Vendor List</h4>
         </div>
         <Table
           className="table table-striped"
