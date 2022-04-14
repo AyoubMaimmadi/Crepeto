@@ -4,8 +4,7 @@ import AnchorTag from '../../components/Anchortag'
 class EmployeeView extends Component {
   constructor(props) {
     super(props)
-    this.productDetails =
-      'PERFECT GIFT IDEA: Works on wet, tion and is not a product defect.'
+    this.productDetails = 'lorem Ipsum'
   }
 
   render() {

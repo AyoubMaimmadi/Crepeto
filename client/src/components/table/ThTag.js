@@ -1,17 +1,13 @@
-import React, {Component} from "react";
+import React, { Component } from 'react'
 
+class ThTag extends Component {
+  constructor(props) {
+    super(props)
+  }
 
-class ThTag extends Component{
-    constructor(props){
-        super(props);
-    }
-
-
-    render(){
-        return (
-            <th scope="col">{this.props.value}</th>
-        ) 
-    }
+  render() {
+    return <th scope="col">{this.props.value}</th>
+  }
 }
 
-export default ThTag;
+export default ThTag

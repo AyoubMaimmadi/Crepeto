@@ -34,7 +34,7 @@ class ProfilePage extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="hasan08sust@gmail.com"
+                      value="ayoubmaimmadi@gmail.com"
                       readOnly
                     />
                   </div>
@@ -47,9 +47,9 @@ class ProfilePage extends Component {
                       id="inlineFormCustomSelectPref"
                     >
                       <option>Choose...</option>
-                      <option value="1">Super Admin</option>
-                      <option value="2">Admin</option>
-                      <option value="3">Editor</option>
+                      <option value="1">Manager</option>
+                      <option value="2">Chef</option>
+                      <option value="3">Waiter</option>
                     </select>
                   </div>
                 </div>
