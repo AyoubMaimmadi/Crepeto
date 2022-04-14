@@ -32,7 +32,7 @@ class CustomerRootPage extends Component {
                     link={`${this.props.match.path}/shop/view`}
                     liClassName=""
                     className="list-group-item list-group-item-action"
-                    itemValue="Shop"
+                    itemValue="Restaurant"
                   ></AnchorTag>
                   <AnchorTag
                     link={`${this.props.match.path}/shop/employee/list`}
@@ -54,17 +54,17 @@ class CustomerRootPage extends Component {
                   <AnchorTag
                     link={`${this.props.match.path}/shop/invoice/list`}
                     className="list-group-item list-group-item-action"
-                    itemValue="Invoice"
+                    itemValue="Customer"
                   ></AnchorTag>
                   <AnchorTag
                     link={`${this.props.match.path}/profile/me`}
                     className="list-group-item list-group-item-action"
-                    itemValue="Profile"
+                    itemValue="Manager"
                   ></AnchorTag>
                   <AnchorTag
                     link={`${this.props.match.path}/profile/password-reset`}
                     className="list-group-item list-group-item-action"
-                    itemValue="Password Reset"
+                    itemValue="Reset Password"
                   ></AnchorTag>
                 </div>
               </div>
