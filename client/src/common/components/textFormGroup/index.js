@@ -1,3 +1,3 @@
-import TextFormGroup from "./TextFormGroup";
+import TextFormGroup from './TextFormGroup'
 
-export default TextFormGroup;
+export default TextFormGroup
