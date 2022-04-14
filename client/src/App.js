@@ -1,22 +1,33 @@
-import './App.scss'
-import React, { Component } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import WarehousePage from './pages/WarehousePage/WarehousePage'
-import InventoryPage from './pages/InventoryPage/InventoryPage'
+import './App.css';
+import React, {useState} from "react";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom"
+import HomePage from "./pages/HomePage";
+import NotFoundPage from "./pages/NotFound";
+import AuthPage from "./pages/AuthPage";
+import RootPage from "./pages/admin/RootPage";
+import CustomerRootPage from "./pages/customer/RootPage";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="app__body">
-        <BrowserRouter>
+
+function App() {
+  return (
+      <div className="App">
+        <Router>
           <Switch>
-            <Route path="/inventory" component={InventoryPage} />
-            <Route path="/" component={WarehousePage} />
+            <Route exact path="/">
+              <Redirect to="/app/dashboard" />
+            </Route>
+            <Route path="/app" component={CustomerRootPage}></Route>
+            <Route exact path="/login" component={AuthPage}></Route>
+            <Route exact path="/registration" component={AuthPage}></Route>
+            <Route exact path="/password-reset-account-verify" component={AuthPage}></Route>
+            <Route exact path="/password-reset" component={AuthPage}></Route>
+            {/* Admin Routers */}
+            <Route path="/admin" component={RootPage}></Route>
+            <Route exact path="" component={NotFoundPage} />
           </Switch>
-        </BrowserRouter>
+        </Router>
       </div>
-    )
-  }
+    );
 }
 
-export default App
+export default App;
