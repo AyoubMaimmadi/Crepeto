@@ -9,10 +9,10 @@ class RegistrationForm extends Component {
           <div className="form-group">
             <h3 className="text-center pb-3">User Registration</h3>
           </div>
-          <div className="form-group">
+          <dip className="form-group">
             <label>First Name</label>
             <input type="text" className="form-control" id="username" />
-          </div>
+          </dip>
           <div className="form-group">
             <label>Last Name</label>
             <input type="text" className="form-control" id="username" />

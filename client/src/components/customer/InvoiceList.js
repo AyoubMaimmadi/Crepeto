@@ -9,7 +9,7 @@ class InvoiceList extends Component {
     this.columnList = [
       'ID',
       'Customer',
-      'Invoice ID',
+      'Order ID',
       'Total',
       'Paid',
       'Date',
@@ -60,12 +60,12 @@ class InvoiceList extends Component {
             className="btn btn-sm btn-warning float-right"
             itemValue="Create Invocie"
           ></AnchorTag>
-          <h4>Invoice List</h4>
+          <h4>Customer List</h4>
         </div>
         <div className="row mb-5">
           <div className="col-12">
             <p>
-              <b>Search Invoice</b>
+              <b>Search Customer</b>
             </p>
           </div>
           <div className="col-2">
@@ -79,7 +79,7 @@ class InvoiceList extends Component {
             <InputFormGroup
               labelClassName="sr-only"
               inputClassName="form-control form-control-sm"
-              placeholder="Invoice ID"
+              placeholder="Customer ID"
             />
           </div>
           <div className="col-2">

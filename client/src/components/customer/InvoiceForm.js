@@ -12,42 +12,42 @@ class InvoiceForm extends Component {
     this.productCategory = [
       {
         id: 1,
-        name: 'Computer Accessories',
+        name: 'Sweets',
       },
       {
         id: 2,
-        name: 'Kitchen & Dining',
+        name: 'Food',
       },
       {
         id: 2,
-        name: 'Watch & Sunglasses',
+        name: 'Cakes',
       },
     ]
     this.columnList = ['ID', 'Name', 'Stock', 'Price', 'Action']
     this.tableData = [
       {
         id: 1,
-        name: 'USB 2.0 to Sata 7+15 Pin 2.5 Converter ..',
+        name: 'Nutella',
         stock: 20,
-        price: '238.00',
+        price: '38.00',
       },
       {
         id: 2,
-        name: 'FANTECH VX7 CRYPTO GAMING MOUSE ..',
+        name: 'Chocolate Cake',
         stock: 20,
-        price: '980.00',
+        price: '20.00',
       },
       {
         id: 3,
-        name: 'Cake decoration turntable - 28cm and 3 pieces set ..',
+        name: 'Vanilla Cake',
         stock: 20,
-        price: '305.00',
+        price: '18.00',
       },
       {
         id: 4,
-        name: 'Stylish White Sunglasses ..',
+        name: 'Something',
         stock: 20,
-        price: '139.00',
+        price: '69.00',
       },
     ]
 
@@ -55,30 +55,30 @@ class InvoiceForm extends Component {
     this.invoiceTableData = [
       {
         id: 1,
-        name: 'USB 2.0 to Sata 7+15 Pin 2.5 Converter ..',
+        name: 'Something',
         quantity: 1,
-        price: '238.00',
+        price: '28.00',
         subtotal: 2000,
       },
       {
         id: 2,
-        name: 'FANTECH VX7 CRYPTO GAMING MOUSE ..',
+        name: 'Something',
         quantity: 2,
-        price: '980.00',
+        price: '98.00',
         subtotal: 2000,
       },
       {
         id: 3,
-        name: 'Cake decoration turntable - 28cm and 3 pieces set ..',
+        name: 'Something',
         quantity: 1,
-        price: '305.00',
+        price: '35.00',
         subtotal: 2000,
       },
       {
         id: 4,
-        name: 'Stylish White Sunglasses ..',
+        name: 'Something',
         quantity: 4,
-        price: '139.00',
+        price: '19.00',
         subtotal: 2000,
       },
     ]
@@ -93,7 +93,7 @@ class InvoiceForm extends Component {
             className="btn btn-sm btn-primary float-right"
             itemValue="Back to Invoice List"
           ></AnchorTag>
-          <h4>Create Invoice</h4>
+          <h4>Create Customer</h4>
         </div>
         <div className="w-75">
           <div className="container-fluid">
@@ -112,7 +112,7 @@ class InvoiceForm extends Component {
                 <div className="form-group">
                   <Button
                     className="btn btn-sm btn-warning w-100"
-                    text="Save Invoice"
+                    text="Save Customer"
                   />
                 </div>
               </div>
@@ -129,7 +129,7 @@ class InvoiceForm extends Component {
                   <tbody>
                     <tr>
                       <td>Total</td>
-                      <td>25785.00</td>
+                      <td>257.00</td>
                     </tr>
                   </tbody>
                 </table>
@@ -170,14 +170,14 @@ class InvoiceForm extends Component {
                         <InputFormGroup
                           labelClassName="sr-only"
                           inputClassName="form-control form-control-sm"
-                          placeholder="Product Name"
+                          placeholder="Order Name"
                         />
                       </div>
                       <div className="col-3">
                         <InputFormGroup
                           labelClassName="sr-only"
                           inputClassName="form-control  form-control-sm"
-                          placeholder="Product Code"
+                          placeholder="Order Code"
                         />
                       </div>
                       <div className="col-3">

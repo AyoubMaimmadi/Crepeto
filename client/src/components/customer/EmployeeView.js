@@ -24,7 +24,7 @@ class EmployeeView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="Md Nazmul"
+                      value="Ayoub"
                       readOnly
                     />
                   </div>
@@ -35,7 +35,7 @@ class EmployeeView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="Hasan"
+                      value="Maimmadi"
                       readOnly
                     />
                   </div>
@@ -46,7 +46,7 @@ class EmployeeView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="hasan08sust@gmail.com"
+                      value="ayoubmaimmadi@gmail.com"
                       readOnly
                     />
                   </div>
@@ -57,7 +57,7 @@ class EmployeeView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="Sales"
+                      value="Manager"
                       readOnly
                     />
                   </div>
@@ -79,7 +79,7 @@ class EmployeeView extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      value="20th April, 2021"
+                      value="20th April, 2022"
                       readOnly
                     />
                   </div>
