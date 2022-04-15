@@ -29,7 +29,7 @@ class DashboardPage extends Component {
                   <p>
                     <b>Total Products</b>
                   </p>
-                  <p>240</p>
+                  <p>269</p>
                 </div>
               </div>
               <div className="col-4">
