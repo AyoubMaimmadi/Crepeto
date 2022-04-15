@@ -37,7 +37,7 @@ class DashboardPage extends Component {
                   <p>
                     <b>Total Profit</b>
                   </p>
-                  <p>MAD 2923.87 </p>
+                  <p>MAD 2923.99 </p>
                 </div>
               </div>
             </div>
