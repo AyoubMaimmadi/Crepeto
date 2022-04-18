@@ -1,5 +1,7 @@
 # Crepeto (Still In Production)
 
+![](client/public/crepeto.PNG)
+
 ## Database Project using React: (JS/BOOTSTRAP/PSQL/...)
 
 ## Allows the manager the have full managerial control over his business
