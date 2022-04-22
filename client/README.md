@@ -1,6 +1,6 @@
 # Crepeto (Still In Production)
 
-![](/public/crepeto.PNG)
+![](./public/crepeto.PNG)
 
 ## Database Project using React: (JS/BOOTSTRAP/PSQL/...)
 
