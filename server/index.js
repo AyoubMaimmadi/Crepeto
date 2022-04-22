@@ -1,11 +1,22 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import cors from 'cors'
-
+// Server imports and setup
+const express = require('express')
+const http = require('http')
+const bodyParser = require('body-parser')
+const morgan = require('morgan')
 const app = express()
 
-const PORT = process.env.PORT || 8080
+// Routes for the server
+const router = require('./router')
+const cors = require('cors')
 
-app.listen(PORT, () => {
-  console.log(`Server is live: http://localhost:${PORT}`)
-})
+// App setup
+app.use(morgan('combined'))
+app.use(cors())
+app.use(bodyParser.json({ type: '*/*' }))
+router(app)
+
+// Server setup
+const port = 3090
+const server = http.createServer(app)
+server.listen(port)
+console.log(`Server running on: http://localhost:${port}`)
