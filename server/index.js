@@ -5,18 +5,15 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const app = express()
 
-// Routes for the server
 const router = require('./router')
 const cors = require('cors')
 
-// App setup
 app.use(morgan('combined'))
 app.use(cors())
 app.use(bodyParser.json({ type: '*/*' }))
 router(app)
 
-// Server setup
-const port = 3090
+const PORT = 3090 || process.env.PORT
 const server = http.createServer(app)
-server.listen(port)
-console.log(`Server running on: http://localhost:${port}`)
+server.listen(PORT)
+console.log(`Server Live in: http://localhost:${PORT}`)

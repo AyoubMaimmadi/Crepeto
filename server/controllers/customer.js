@@ -27,7 +27,7 @@ exports.getCustomer = (req, res) => {
   )
 }
 
-// View 5: Get all addresses from customers and suppliers for logistical purposes
+//Get all addresses from customers and suppliers for logistical purposes
 exports.getGeographicInfo = (req, res) => {
   pool.query(
     `SELECT address FROM customer
@@ -43,7 +43,7 @@ exports.getGeographicInfo = (req, res) => {
   )
 }
 
-// View 8: Get the name, phone number, and email of all customers who have an active order
+//Get the name, phone number, and email of all customers who have an active order
 exports.getActiveCustomersInfo = (req, res) => {
   pool.query(
     `SELECT DISTINCT name, phone, email FROM customer
@@ -58,7 +58,7 @@ exports.getActiveCustomersInfo = (req, res) => {
   )
 }
 
-// View 9: Get the name, phone number, and email of all customers who ordered something in October
+// Get the name, phone number, and email of all customers who ordered something in October
 exports.getOctoberCustomers = (req, res) => {
   pool.query(
     `SELECT DISTINCT name, phone, email FROM customer
@@ -89,6 +89,41 @@ exports.addCustomer = (req, res) => {
 
       // Return the newly created customer
       res.status(201).send(results.rows)
+    }
+  )
+}
+
+// Delete a customer based on the given id
+exports.deleteCustomer = (req, res) => {
+  const id = parseInt(req.params.id)
+
+  pool.query(
+    `DELETE FROM customer WHERE customer_id=${id}
+    RETURNING customer_id;`,
+    (err, results) => {
+      if (err) {
+        throw err
+      }
+
+      res.status(200).json(results.rows)
+    }
+  )
+}
+
+// Update a customer based on the given id
+exports.updateCustomer = (req, res) => {
+  const id = parseInt(req.params.id)
+
+  pool.query(
+    `UPDATE customer SET name='${req.body.name}', phone='${req.body.phone}', email='${req.body.email}', address='${req.body.address}'
+    WHERE customer_id=${id}
+    RETURNING customer_id;`,
+    (err, results) => {
+      if (err) {
+        throw err
+      }
+
+      res.status(200).json(results.rows)
     }
   )
 }

@@ -27,7 +27,7 @@ exports.getSupplier = (req, res) => {
   )
 }
 
-// View 2: Get the supplier ID and supplier name for suppliers that contribute more than one product
+// Get the supplier ID and supplier name for suppliers that contribute more than one product
 exports.getMultiProductSuppliers = (req, res) => {
   pool.query(
     `SELECT supplier.supplier_id, supplier.name FROM supplier
@@ -47,7 +47,7 @@ exports.getMultiProductSuppliers = (req, res) => {
   )
 }
 
-// View 6: Get the names of all products that belong to a specific supplier
+// Get the names of all products that belong to a specific supplier
 exports.getSupplierProducts = (req, res) => {
   const supplier_id = parseInt(req.params.id)
 
@@ -79,6 +79,40 @@ exports.addSupplier = (req, res) => {
 
       // Return newly created supplier
       res.status(201).send(results.rows)
+    }
+  )
+}
+
+// Delete a supplier based on the given id
+exports.deleteSupplier = (req, res) => {
+  const id = parseInt(req.params.id)
+
+  pool.query(
+    `DELETE FROM supplier WHERE supplier_id=${id} RETURNING supplier_id;`,
+    (err, results) => {
+      if (err) {
+        throw err
+      }
+
+      res.status(200).json(results.rows)
+    }
+  )
+}
+
+// Update a supplier based on the given id
+exports.updateSupplier = (req, res) => {
+  const id = parseInt(req.params.id)
+
+  pool.query(
+    `UPDATE supplier SET name='${req.body.name}', phone='${req.body.phone}', address='${req.body.address}'
+    WHERE supplier_id=${id}
+    RETURNING supplier_id;`,
+    (err, results) => {
+      if (err) {
+        throw err
+      }
+
+      res.status(200).json(results.rows)
     }
   )
 }

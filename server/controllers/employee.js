@@ -27,7 +27,7 @@ exports.getEmployee = (req, res) => {
   )
 }
 
-// View 5: Get all addresses from employees and suppliers for logistical purposes
+// Get all addresses from employees and suppliers for logistical purposes
 exports.getGeographicInfo = (req, res) => {
   pool.query(
     `SELECT address FROM employee
@@ -69,17 +69,35 @@ exports.addEmployee = (req, res) => {
         throw err
       }
 
-      // Return the newly created employee
       res.status(201).send(results.rows)
     }
   )
 }
 
+// Delete an employee based on the given id
 exports.deleteEmployee = (req, res) => {
   const id = parseInt(req.params.id)
 
   pool.query(
-    `DELETE FROM employee WHERE employee_id=${id};`,
+    `DELETE FROM employee WHERE employee_id=${id} RETURNING employee_id;`,
+    (err, results) => {
+      if (err) {
+        throw err
+      }
+
+      res.status(200).json(results.rows)
+    }
+  )
+}
+
+// Update an employee based on the given id
+exports.updateEmployee = (req, res) => {
+  const id = parseInt(req.params.id)
+
+  pool.query(
+    `UPDATE employee SET name='${req.body.name}', phone='${req.body.phone}', email='${req.body.email}', address='${req.body.address}', salary='${req.body.salary}'
+    WHERE employee_id=${id}
+    RETURNING employee_id;`,
     (err, results) => {
       if (err) {
         throw err
