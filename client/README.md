@@ -1,5 +1,7 @@
 # Crepeto
 
+![](.client/public/images/homepage.PNG)
+
 ## Database Project using React: (JS/MUI/PSQL/...)
 
 ## Allows the manager the have full managerial control over his business
@@ -22,4 +24,4 @@ To use/view this system you need to:
 
 ### You can view this website using the link https://crepeto.netlify.app/
 
-## You can see this website's API using the link https://crepeto-api.herokuapp.com/
+### You can see this website's API using the link https://crepeto-api.herokuapp.com/
