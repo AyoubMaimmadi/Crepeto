@@ -6,7 +6,6 @@ exports.getEmployees = (req, res) => {
     if (err) {
       throw err
     }
-
     res.status(200).json(results.rows)
   })
 }
@@ -14,14 +13,12 @@ exports.getEmployees = (req, res) => {
 // Get a employee's info based on the given id
 exports.getEmployee = (req, res) => {
   const id = parseInt(req.params.id)
-
   pool.query(
     `SELECT * FROM employee WHERE employee_id=${id};`,
     (err, results) => {
       if (err) {
         throw err
       }
-
       res.status(200).json(results.rows)
     }
   )
@@ -37,7 +34,6 @@ exports.getGeographicInfo = (req, res) => {
       if (err) {
         throw err
       }
-
       res.status(200).json(results.rows)
     }
   )
@@ -50,7 +46,6 @@ exports.getActiveEmployeesInfo = (req, res) => {
       if (err) {
         throw err
       }
-
       res.status(200).json(results.rows)
     }
   )
@@ -59,7 +54,6 @@ exports.getActiveEmployeesInfo = (req, res) => {
 // Add a new employee to the database
 exports.addEmployee = (req, res) => {
   const { name, phone, email, address, salary } = req.body
-
   pool.query(
     `INSERT INTO employee(name, phone, email, address, salary) 
     VALUES('${name}', '${phone}', '${email}', '${address}', '${salary}')
@@ -68,7 +62,6 @@ exports.addEmployee = (req, res) => {
       if (err) {
         throw err
       }
-
       res.status(201).send(results.rows)
     }
   )
@@ -77,14 +70,12 @@ exports.addEmployee = (req, res) => {
 // Delete an employee based on the given id
 exports.deleteEmployee = (req, res) => {
   const id = parseInt(req.params.id)
-
   pool.query(
     `DELETE FROM employee WHERE employee_id=${id} RETURNING employee_id;`,
     (err, results) => {
       if (err) {
         throw err
       }
-
       res.status(200).json(results.rows)
     }
   )
@@ -93,7 +84,6 @@ exports.deleteEmployee = (req, res) => {
 // Update an employee based on the given id
 exports.updateEmployee = (req, res) => {
   const id = parseInt(req.params.id)
-
   pool.query(
     `UPDATE employee SET name='${req.body.name}', phone='${req.body.phone}', email='${req.body.email}', address='${req.body.address}', salary='${req.body.salary}'
     WHERE employee_id=${id}
@@ -102,7 +92,6 @@ exports.updateEmployee = (req, res) => {
       if (err) {
         throw err
       }
-
       res.status(200).json(results.rows)
     }
   )
