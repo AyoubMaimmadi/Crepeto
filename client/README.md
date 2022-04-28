@@ -24,7 +24,7 @@ To use/view this system you need to:
 
 5- Set up PSQL database and create tables
 
-CREATE TABLE customer (
+`CREATE TABLE customer (
 customer_id SERIAL PRIMARY KEY,
 name VARCHAR(255),
 phone VARCHAR(255),
@@ -71,7 +71,7 @@ address VARCHAR(255),
 phone VARCHAR(255),
 email VARCHAR(255),
 salary VARCHAR(255)
-);
+);`
 
 ### You can view this website using the link https://crepeto.netlify.app/
 
