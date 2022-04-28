@@ -1,6 +1,6 @@
 # Crepeto
 
-![](.client/public/images/homepage.PNG)
+![](.client/public/homepage.PNG)
 
 ## Database Project using React: (JS/MUI/PSQL/...)
 

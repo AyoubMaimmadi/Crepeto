@@ -1,5 +1,7 @@
 # Crepeto
 
+![](../client/public/homepage.PNG)
+
 ## Database Project using React: (JS/MUI/PSQL/...)
 
 ## Allows the manager the have full managerial control over his business
