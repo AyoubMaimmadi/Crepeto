@@ -54,7 +54,6 @@ price FLOAT(10),
 supplier_id INTEGER REFERENCES supplier(supplier_id)
 );
 
-// Table name order doesn't work for some reason
 CREATE TABLE order_details (
 order_id SERIAL PRIMARY KEY,
 order_date DATE,
@@ -76,4 +75,5 @@ salary VARCHAR(255)
 ### You can view this website using the link https://crepeto.netlify.app/
 
 ### You can see this website's API using the link https://crepeto-api.herokuapp.com/
-##### API not public yet, still in production 
+
+##### API not public yet, still in production

@@ -54,7 +54,6 @@ price FLOAT(10),
 supplier_id INTEGER REFERENCES supplier(supplier_id)
 );
 
-// Table name order doesn't work for some reason
 CREATE TABLE order_details (
 order_id SERIAL PRIMARY KEY,
 order_date DATE,
