@@ -4,6 +4,7 @@ const pool = require('./pool')
 exports.getEmployees = (req, res) => {
   pool.query(`SELECT * FROM employee ORDER BY employee_id;`, (err, results) => {
     if (err) {
+      console.error(err)
       throw err
     }
     res.status(200).json(results.rows)
