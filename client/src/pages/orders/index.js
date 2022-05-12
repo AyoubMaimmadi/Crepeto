@@ -104,21 +104,14 @@ function Orders() {
         <form onSubmit={createProduct}>
           <TextField
             className={classes.textField}
-            label="Name"
-            name="name"
+            label="Order Name"
+            name="order_name"
             required
             onChange={handleFormChange}
           />
           <TextField
             className={classes.dateField}
             name="order_date"
-            type="date"
-            required
-            onChange={handleFormChange}
-          />
-          <TextField
-            className={classes.dateField}
-            name="order_time"
             type="date"
             required
             onChange={handleFormChange}

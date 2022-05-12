@@ -68,9 +68,8 @@ supplier_id INTEGER REFERENCES supplier(supplier_id)
 
 CREATE TABLE orders (
 order_id SERIAL PRIMARY KEY,
-name VARCHAR(255),
+order_name VARCHAR(255),
 order_date DATE,
-order_time DATE,
 product_quantity INTEGER,
 customer_id INTEGER REFERENCES customer(customer_id),
 product_id INTEGER REFERENCES product(product_id)

@@ -40,7 +40,7 @@ exports.getFullOrderInfo = (req, res) => {
 exports.getCustomerOrderDates = (req, res) => {
   const customer_id = parseInt(req.params.id)
   pool.query(
-    `SELECT DISTINCT order_id, order_date, order_time FROM orders
+    `SELECT DISTINCT order_id, order_date FROM orders
     JOIN customer ON orders.customer_id=${customer_id}`,
     (err, results) => {
       if (err) {
@@ -69,14 +69,8 @@ exports.getProductsFromOrders = (req, res) => {
 
 // Add a new order
 exports.addOrder = (req, res) => {
-  const {
-    name,
-    order_date,
-    order_time,
-    product_quantity,
-    customer_id,
-    product_id,
-  } = req.body
+  const { order_name, order_date, product_quantity, customer_id, product_id } =
+    req.body
   pool.query(
     `SELECT quantity FROM product WHERE product_id=${product_id}`,
     (err, results) => {
@@ -86,8 +80,8 @@ exports.addOrder = (req, res) => {
       // Check if the order's quantity can be matched
       if (product_quantity <= results.rows[0].quantity) {
         pool.query(
-          `INSERT INTO orders(name, order_date, order_time, product_quantity, customer_id, product_id) 
-          VALUES('${name}','${order_date}', '${order_time}', ${product_quantity}, ${customer_id}, ${product_id});`,
+          `INSERT INTO orders(order_name, order_date, product_quantity, customer_id, product_id) 
+          VALUES('${order_name}','${order_date}', ${product_quantity}, ${customer_id}, ${product_id});`,
           (err, results) => {
             if (err) {
               throw err
@@ -118,7 +112,7 @@ exports.deleteOrder = (req, res) => {
 exports.updateOrder = (req, res) => {
   const id = parseInt(req.params.id)
   pool.query(
-    `UPDATE orders SET order_date='${req.body.order_date}', order_time='${req.body.order_time}', product_quantity=${req.body.product_quantity}, customer_id=${req.body.customer_id}, product_id=${req.body.product_id} WHERE order_id=${id}`,
+    `UPDATE orders SET order_date='${req.body.order_date}', product_quantity=${req.body.product_quantity}, customer_id=${req.body.customer_id}, product_id=${req.body.product_id} WHERE order_id=${id}`,
     (err, results) => {
       if (err) {
         throw err
