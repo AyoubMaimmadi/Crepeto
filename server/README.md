@@ -60,7 +60,7 @@ phone VARCHAR(255)
 
 CREATE TABLE product (
 product_id SERIAL PRIMARY KEY,
-name VARCHAR(255),
+product_name VARCHAR(255),
 quantity INTEGER,
 price FLOAT(10),
 supplier_id INTEGER REFERENCES supplier(supplier_id)
