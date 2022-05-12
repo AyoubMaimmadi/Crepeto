@@ -27,6 +27,20 @@ exports.getMonthlyExpense = (req, res) => {
   )
 }
 
+// get the mothly billing from /billing/:id
+exports.getMonthlyBillingID = (req, res) => {
+  const id = parseInt(req.params.id)
+  pool.query(
+    `SELECT * FROM billing WHERE MonthyBilling_id=${id}`,
+    (err, results) => {
+      if (err) {
+        throw err
+      }
+      res.status(200).json(results.rows)
+    }
+  )
+}
+
 // get mothly revenue from /billing/:id
 exports.getMonthlyRevenue = (req, res) => {
   const id = parseInt(req.params.id)

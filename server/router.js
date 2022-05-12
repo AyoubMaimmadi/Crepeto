@@ -55,6 +55,7 @@ module.exports = (app) => {
   app.put('/suppliers/:id', supplier.updateSupplier)
   // Routes for the billing table
   app.get('/billing', billing.getMonthlyBilling)
+  app.get('/billing/:id', billing.getMonthlyBillingID)
   app.get('/billing/:id', billing.getMonthlyExpense)
   app.get('/billing/:id', billing.getMonthlyRevenue)
 }
