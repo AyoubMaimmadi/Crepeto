@@ -111,15 +111,7 @@ function Billing() {
           size="medium"
           onClick={getMonthlyExpense}
         >
-          Search Month Expense
-        </Button>
-        <Button
-          className={classes.button}
-          variant="contained"
-          size="medium"
-          onClick={getMonthBilling}
-        >
-          Search Month Revenue
+          Search Month
         </Button>
       </Grid>
       <Divider className={classes.divider} />
@@ -133,9 +125,25 @@ function Billing() {
           className={classes.button}
           variant="contained"
           size="medium"
-          onClick={getMonthBilling}
+          onClick={getMonthlyExpense}
         >
-          More Info
+          Search Month Expense
+        </Button>
+        <Button
+          className={classes.button}
+          variant="contained"
+          size="medium"
+          onClick={getMonthlyRevenue}
+        >
+          Search Month Revenue
+        </Button>
+        <Button
+          className={classes.button}
+          variant="contained"
+          size="medium"
+          onClick={getMonthlyRevenue}
+        >
+          Search Month Profit
         </Button>
       </Grid>
     </PageContainer>

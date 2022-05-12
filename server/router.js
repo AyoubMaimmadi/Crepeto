@@ -56,6 +56,6 @@ module.exports = (app) => {
   // Routes for the billing table
   app.get('/billing', billing.getMonthlyBilling)
   app.get('/billing/:id', billing.getMonthlyBillingID)
-  app.get('/billing/:id', billing.getMonthlyExpense)
-  app.get('/billing/:id', billing.getMonthlyRevenue)
+  app.get('/billing/', billing.getMonthlyExpense)
+  app.get('/billing/', billing.getMonthlyRevenue)
 }
