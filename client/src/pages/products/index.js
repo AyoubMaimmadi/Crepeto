@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button'
 import Divider from '@material-ui/core/Divider'
 import PageContainer from '../../components/PageContainer'
 import AppTable from '../../components/AppTable'
-import { getResources, createResource } from '../../helpers'
+import { getResources, createResource, deleteResource } from '../../helpers'
 
 const useStyles = makeStyles({
   textField: {
@@ -76,6 +76,10 @@ function Products() {
     event.preventDefault()
     createResource(`/products/add-product`, formInput)
     getProducts()
+  }
+
+  const deleteProduct = () => {
+    deleteResource(`/products/${productId}`, setProducts)
   }
 
   return (
@@ -172,7 +176,7 @@ function Products() {
           className={classes.button}
           variant="contained"
           size="medium"
-          onClick={getProduct}
+          onClick={deleteProduct}
         >
           Delete Product
         </Button>
