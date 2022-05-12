@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button'
 import Divider from '@material-ui/core/Divider'
 import PageContainer from '../../components/PageContainer'
 import AppTable from '../../components/AppTable'
-import { getResources, createResource } from '../../helpers'
+import { getResources, createResource, deleteResource } from '../../helpers'
 
 const useStyles = makeStyles({
   dateField: {
@@ -64,6 +64,10 @@ function Orders() {
     getResources(`/orders/full-order-info`, setOrders)
   }
 
+  // delete order based on passed orderId
+  const deleteOrder = () => {
+    deleteResource(`/orders/${orderId}`, setOrders)
+  }
   // Save the inputted customerId
   const getCustomerId = (event) => {
     setCustomerId(event.target.value)
@@ -176,6 +180,14 @@ function Orders() {
         >
           Search Order
         </Button>
+        <Button
+          className={classes.button}
+          variant="contained"
+          size="medium"
+          onClick={deleteOrder}
+        >
+          Delete Order
+        </Button>
       </Grid>
       <Divider className={classes.divider} />
       <Grid item container alignItems="center" justify="center">
@@ -196,6 +208,7 @@ function Orders() {
           Search Customer Products
         </Button>
       </Grid>
+
       <Divider className={classes.divider} />
     </PageContainer>
   )

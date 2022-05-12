@@ -60,6 +60,16 @@ function Billing() {
     getResources(`/billing/${billingId}`, setBilling)
   }
 
+  // get monthly expenses
+  const getMonthlyExpense = () => {
+    getResources(`/billing/${billingId}`, setBilling)
+  }
+
+  // get monthly revenue
+  const getMonthlyRevenue = () => {
+    getResources(`/billing/${billingId}`, setBilling)
+  }
+
   // Get all Employees when the page is rendered
   useEffect(() => {
     fetch('http://localhost:3090/billing')
@@ -99,9 +109,17 @@ function Billing() {
           className={classes.button}
           variant="contained"
           size="medium"
-          onClick={getBilling}
+          onClick={getMonthlyExpense}
         >
-          Search Month
+          Search Month Expense
+        </Button>
+        <Button
+          className={classes.button}
+          variant="contained"
+          size="medium"
+          onClick={getMonthBilling}
+        >
+          Search Month Revenue
         </Button>
       </Grid>
       <Divider className={classes.divider} />

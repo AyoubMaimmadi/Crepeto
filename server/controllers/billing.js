@@ -2,12 +2,15 @@ const pool = require('./pool')
 
 // get the mothly billing from /billing/:id
 exports.getMonthlyBilling = (req, res) => {
-  pool.query(`SELECT * FROM billing`, (err, results) => {
-    if (err) {
-      throw err
+  pool.query(
+    `SELECT * FROM billing ORDER BY MonthyBilling_id`,
+    (err, results) => {
+      if (err) {
+        throw err
+      }
+      res.status(200).json(results.rows)
     }
-    res.status(200).json(results.rows)
-  })
+  )
 }
 
 // get mothly expenses from /billing/:id

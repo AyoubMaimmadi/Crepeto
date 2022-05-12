@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button'
 import Divider from '@material-ui/core/Divider'
 import PageContainer from '../../components/PageContainer'
 import AppTable from '../../components/AppTable'
-import { getResources, createResource } from '../../helpers'
+import { getResources, createResource, deleteResource } from '../../helpers'
 
 const useStyles = makeStyles({
   textField: {
@@ -48,6 +48,11 @@ function Suppliers() {
   // Get supplier based on passed supplierId
   const getSupplier = () => {
     getResources(`/suppliers/${supplierId}`, setSuppliers)
+  }
+
+  // delete supplier
+  const deleteSupplier = () => {
+    deleteResource(`/suppliers/${supplierId}`, setSuppliers)
   }
 
   // Get all suppliers who contributed more than one product
@@ -167,7 +172,7 @@ function Suppliers() {
           className={classes.button}
           variant="contained"
           size="medium"
-          onClick={getSupplier}
+          onClick={deleteSupplier}
         >
           Delete Supplier
         </Button>

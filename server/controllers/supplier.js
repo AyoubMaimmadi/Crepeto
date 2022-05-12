@@ -47,7 +47,7 @@ exports.getMultiProductSuppliers = (req, res) => {
 exports.getSupplierProducts = (req, res) => {
   const supplier_id = parseInt(req.params.id)
   pool.query(
-    `SELECT DISTINCT product.name FROM product
+    `SELECT DISTINCT product.product_name FROM product
     JOIN supplier ON product.supplier_id=${supplier_id}`,
     (err, results) => {
       if (err) {
