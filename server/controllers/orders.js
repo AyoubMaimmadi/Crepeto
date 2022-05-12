@@ -24,7 +24,7 @@ exports.getOrder = (req, res) => {
 // Get the customer name, product name, and product quantity for all orders
 exports.getFullOrderInfo = (req, res) => {
   pool.query(
-    `SELECT customer.name as customer_name, product.name, orders.product_quantity FROM orders
+    `SELECT customer.name as customer_name, product.product_name, orders.product_quantity FROM orders
         JOIN customer ON orders.customer_id=customer.customer_id 
         JOIN product ON orders.product_id=product.product_id;`,
     (err, results) => {
@@ -55,7 +55,7 @@ exports.getCustomerOrderDates = (req, res) => {
 exports.getProductsFromOrders = (req, res) => {
   const customer_id = parseInt(req.params.id)
   pool.query(
-    `SELECT product.name, product_quantity FROM orders
+    `SELECT product.product_name, product_quantity FROM orders
     JOIN product on product.product_id=orders.product_id
     WHERE customer_id=${customer_id}`,
     (err, results) => {

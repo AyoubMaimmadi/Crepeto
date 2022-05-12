@@ -27,7 +27,7 @@ exports.getProduct = (req, res) => {
 // Get all proucts where their price is less than the average price of all existing products
 exports.getBelowAveragePrices = (req, res) => {
   pool.query(
-    `SELECT name, price FROM product 
+    `SELECT product_name, price FROM product 
     WHERE price < (SELECT AVG(price) FROM product);`,
     (err, results) => {
       if (err) {
@@ -41,9 +41,9 @@ exports.getBelowAveragePrices = (req, res) => {
 // Get all products, and see which ones belong to an existing order
 exports.getProductsInOrder = (req, res) => {
   pool.query(
-    `SELECT product.name, order_details.order_id FROM order_details 
+    `SELECT product.product_name, order_details.order_id FROM order_details 
     FULL OUTER JOIN product ON product.product_id=order_details.product_id
-    ORDER BY product.name;`,
+    ORDER BY product.product_name;`,
     (err, results) => {
       if (err) {
         throw err
@@ -55,10 +55,10 @@ exports.getProductsInOrder = (req, res) => {
 
 // Add a new product
 exports.addProduct = (req, res) => {
-  const { name, quantity, price, supplier_id } = req.body
+  const { product_name, quantity, price, supplier_id } = req.body
   pool.query(
-    `INSERT INTO product(name, quantity, price, supplier_id) 
-    VALUES('${name}', '${quantity}', ${price}, ${supplier_id})`,
+    `INSERT INTO product(product_name, quantity, price, supplier_id) 
+    VALUES('${product_name}', '${quantity}', ${price}, ${supplier_id})`,
     (err, results) => {
       if (err) {
         throw err
