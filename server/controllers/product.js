@@ -41,8 +41,8 @@ exports.getBelowAveragePrices = (req, res) => {
 // Get all products, and see which ones belong to an existing order
 exports.getProductsInOrder = (req, res) => {
   pool.query(
-    `SELECT product.product_name, order_details.order_id FROM order_details 
-    FULL OUTER JOIN product ON product.product_id=order_details.product_id
+    `SELECT product.product_name, orders.order_id FROM orders 
+    LEFT OUTER JOIN product ON product.product_id=orders.product_id
     ORDER BY product.product_name;`,
     (err, results) => {
       if (err) {

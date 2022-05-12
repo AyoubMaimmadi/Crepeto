@@ -59,11 +59,6 @@ function Customers() {
     deleteResource(`/customers/${customerId}`, setCustomers)
   }
 
-  // Get all customers who have an active order
-  const getActiveCustomers = () => {
-    getResources(`/customers/active-customers-info`, setCustomers)
-  }
-
   // Save the form input
   const handleFormChange = (event) => {
     setFormInput({
@@ -126,15 +121,7 @@ function Customers() {
           size="medium"
           onClick={getCustomers}
         >
-          Get Customers
-        </Button>
-        <Button
-          className={classes.button}
-          variant="contained"
-          size="medium"
-          onClick={getActiveCustomers}
-        >
-          Get Active Customers
+          VOEW ALL Customers
         </Button>
       </Grid>
       <Divider className={classes.divider} />

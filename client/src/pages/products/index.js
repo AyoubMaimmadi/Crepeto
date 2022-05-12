@@ -88,7 +88,7 @@ function Products() {
           <TextField
             className={classes.textField}
             label="Name"
-            name="name"
+            name="product_name"
             required
             onChange={handleFormChange}
           />
