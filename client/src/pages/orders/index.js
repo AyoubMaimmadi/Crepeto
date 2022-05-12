@@ -103,6 +103,13 @@ function Orders() {
       <Grid item container alignItems="center" justify="center">
         <form onSubmit={createProduct}>
           <TextField
+            className={classes.textField}
+            label="Name"
+            name="name"
+            required
+            onChange={handleFormChange}
+          />
+          <TextField
             className={classes.dateField}
             name="order_date"
             type="date"

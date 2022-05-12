@@ -69,8 +69,14 @@ exports.getProductsFromOrders = (req, res) => {
 
 // Add a new order
 exports.addOrder = (req, res) => {
-  const { order_date, order_time, product_quantity, customer_id, product_id } =
-    req.body
+  const {
+    name,
+    order_date,
+    order_time,
+    product_quantity,
+    customer_id,
+    product_id,
+  } = req.body
   pool.query(
     `SELECT quantity FROM product WHERE product_id=${product_id}`,
     (err, results) => {
@@ -80,8 +86,8 @@ exports.addOrder = (req, res) => {
       // Check if the order's quantity can be matched
       if (product_quantity <= results.rows[0].quantity) {
         pool.query(
-          `INSERT INTO orders(order_date, order_time, product_quantity, customer_id, product_id) 
-          VALUES('${order_date}', '${order_time}', ${product_quantity}, ${customer_id}, ${product_id});`,
+          `INSERT INTO orders(name, order_date, order_time, product_quantity, customer_id, product_id) 
+          VALUES('${name}','${order_date}', '${order_time}', ${product_quantity}, ${customer_id}, ${product_id});`,
           (err, results) => {
             if (err) {
               throw err
