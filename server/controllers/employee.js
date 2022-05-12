@@ -41,15 +41,12 @@ exports.getGeographicInfo = (req, res) => {
 }
 
 exports.getActiveEmployeesInfo = (req, res) => {
-  pool.query(
-    `SELECT * FROM employee ORDER BY employee_id;;`,
-    (err, results) => {
-      if (err) {
-        throw err
-      }
-      res.status(200).json(results.rows)
+  pool.query(`SELECT * FROM employee ORDER BY employee_id;`, (err, results) => {
+    if (err) {
+      throw err
     }
-  )
+    res.status(200).json(results.rows)
+  })
 }
 
 // Add a new employee to the database
