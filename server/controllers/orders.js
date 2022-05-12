@@ -2,37 +2,31 @@ const pool = require('./pool')
 
 // Get all orders in the database
 exports.getOrders = (req, res) => {
-  pool.query(
-    `SELECT * FROM order_details ORDER BY order_id;`,
-    (err, results) => {
-      if (err) {
-        throw err
-      }
-      res.status(200).json(results.rows)
+  pool.query(`SELECT * FROM orders ORDER BY order_id;`, (err, results) => {
+    if (err) {
+      throw err
     }
-  )
+    res.status(200).json(results.rows)
+  })
 }
 
 // Get an order's info based on the given id
 exports.getOrder = (req, res) => {
   const id = parseInt(req.params.id)
-  pool.query(
-    `SELECT * FROM order_details WHERE order_id=${id};`,
-    (err, results) => {
-      if (err) {
-        throw err
-      }
-      res.status(200).json(results.rows)
+  pool.query(`SELECT * FROM orders WHERE order_id=${id};`, (err, results) => {
+    if (err) {
+      throw err
     }
-  )
+    res.status(200).json(results.rows)
+  })
 }
 
 // Get the customer name, product name, and product quantity for all orders
 exports.getFullOrderInfo = (req, res) => {
   pool.query(
-    `SELECT customer.name as customer_name, product.name, order_details.product_quantity FROM order_details
-        JOIN customer ON order_details.customer_id=customer.customer_id 
-        JOIN product ON order_details.product_id=product.product_id;`,
+    `SELECT customer.name as customer_name, product.name, orders.product_quantity FROM orders
+        JOIN customer ON orders.customer_id=customer.customer_id 
+        JOIN product ON orders.product_id=product.product_id;`,
     (err, results) => {
       if (err) {
         throw err
@@ -46,8 +40,8 @@ exports.getFullOrderInfo = (req, res) => {
 exports.getCustomerOrderDates = (req, res) => {
   const customer_id = parseInt(req.params.id)
   pool.query(
-    `SELECT DISTINCT order_id, order_date, order_time FROM order_details
-    JOIN customer ON order_details.customer_id=${customer_id}`,
+    `SELECT DISTINCT order_id, order_date, order_time FROM orders
+    JOIN customer ON orders.customer_id=${customer_id}`,
     (err, results) => {
       if (err) {
         throw err
@@ -61,8 +55,8 @@ exports.getCustomerOrderDates = (req, res) => {
 exports.getProductsFromOrders = (req, res) => {
   const customer_id = parseInt(req.params.id)
   pool.query(
-    `SELECT product.name, product_quantity FROM order_details
-    JOIN product on product.product_id=order_details.product_id
+    `SELECT product.name, product_quantity FROM orders
+    JOIN product on product.product_id=orders.product_id
     WHERE customer_id=${customer_id}`,
     (err, results) => {
       if (err) {
@@ -86,7 +80,7 @@ exports.addOrder = (req, res) => {
       // Check if the order's quantity can be matched
       if (product_quantity <= results.rows[0].quantity) {
         pool.query(
-          `INSERT INTO order_details(order_date, order_time, product_quantity, customer_id, product_id) 
+          `INSERT INTO orders(order_date, order_time, product_quantity, customer_id, product_id) 
           VALUES('${order_date}', '${order_time}', ${product_quantity}, ${customer_id}, ${product_id});`,
           (err, results) => {
             if (err) {
@@ -106,22 +100,19 @@ exports.addOrder = (req, res) => {
 // Delete an order based on the given id
 exports.deleteOrder = (req, res) => {
   const id = parseInt(req.params.id)
-  pool.query(
-    `DELETE FROM order_details WHERE order_id=${id}`,
-    (err, results) => {
-      if (err) {
-        throw err
-      }
-      res.status(200).json(`Order ${id} deleted`)
+  pool.query(`DELETE FROM orders WHERE order_id=${id}`, (err, results) => {
+    if (err) {
+      throw err
     }
-  )
+    res.status(200).json(`Order ${id} deleted`)
+  })
 }
 
 // Update an order based on the given id
 exports.updateOrder = (req, res) => {
   const id = parseInt(req.params.id)
   pool.query(
-    `UPDATE order_details SET order_date='${req.body.order_date}', order_time='${req.body.order_time}', product_quantity=${req.body.product_quantity}, customer_id=${req.body.customer_id}, product_id=${req.body.product_id} WHERE order_id=${id}`,
+    `UPDATE orders SET order_date='${req.body.order_date}', order_time='${req.body.order_time}', product_quantity=${req.body.product_quantity}, customer_id=${req.body.customer_id}, product_id=${req.body.product_id} WHERE order_id=${id}`,
     (err, results) => {
       if (err) {
         throw err

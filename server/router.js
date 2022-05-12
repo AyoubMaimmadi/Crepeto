@@ -1,5 +1,5 @@
 const customer = require('./controllers/customer')
-const order = require('./controllers/order_details')
+const order = require('./controllers/orders')
 const product = require('./controllers/product')
 const supplier = require('./controllers/supplier')
 const employee = require('./controllers/employee')

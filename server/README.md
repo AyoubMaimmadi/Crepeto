@@ -1,28 +1,39 @@
 # Crepeto
 
-![](../client/public/homepage.PNG)
+- Final project for CSC3326 - Database Systems
+- An Online Restaurant Management System
+- Created using React, Node.js, Express, and PostgreSQL
 
-## Database Project using React: (JS/MUI/PSQL/...)
+# Creating a new user for testing
 
-## Allows the manager the have full managerial control over his business
+- To test the application with a local PostgreSQL database,you need to create a new user.
+- For testing purposes, a new user, `dev`, will be created, with a password of `password1`.
+- To create a new user, enter `CREATE ROLE dev WITH LOGIN PASSWORD 'password1';`.
+- To allow the new user to create a database, enter `ALTER ROLE dev CREATEDB;`.
+- To check if the new user was successfully created, enter `\du`.
+- Enter `\q` to quit the current session.
 
-### He can Add, Delete, and Search Orders, Customer, Suppliers, and Employees
+# Creating and connect to a new local database
 
-To use/view this system you need to:
+- A new local database needs to be created with the appropriate settings to test the application locally.
+- To connect to Postgres using the created `dev` user, enter `psql -d postgres -U dev`.
+- To create a new database, enter `CREATE DATABASE crepeto;`.
+- To check if the `crepeto` database was successfully created, enter `\list`.
+- To connect to the `crepeto` database, enter `\c crepeto`, or quit the current session by entering `\q`, and then enter `psql -d crepeto -U dev`.
 
-1- Clone or Download this repository
+# Creating tables for the database
 
-2- Have node.js pre-installed in you computer
+- To create a new table, enter:
 
-3- Launch your IDE and cd into the projct
+```
+CREATE TABLE {table_name} (
+  {primary_key_field} SERIAL PRIMARY KEY,
+  {column_one_name} {dataType},
+  {column_two_name} {dataType}
+)
+```
 
-4- open terminal and run:
-
-##### - `npm or yarn install` to install node modules in client + server
-
-##### - `npm or yarn start` to open in localhost -> client: 3000, server: 3090
-
-5- Set up PSQL database and create tables
+- For the crepeto application, 6 tables need to be created:
 
 ```
 CREATE TABLE customer (
@@ -55,8 +66,9 @@ price FLOAT(10),
 supplier_id INTEGER REFERENCES supplier(supplier_id)
 );
 
-CREATE TABLE order_details (
+CREATE TABLE orders (
 order_id SERIAL PRIMARY KEY,
+order_name VARCHAR(255),
 order_date DATE,
 order_time DATE,
 product_quantity INTEGER,
@@ -74,6 +86,10 @@ salary VARCHAR(255)
 );
 ```
 
-### You can view this website using the link https://crepeto.netlify.app/
+# Running the project
 
-### You can see this website's API using the link https://crepeto-api.herokuapp.com/
+- To run the client, `cd` into the client directory, and enter `npm or yarn start`.
+- To run the server, `cd` into the server directory, and enter `npm or yarn start`.
+- The client, server, and database must all be online and running for the crepeto application to be fully functional.
+- To check the status of the client, go to `localhost:3000` on the browser.
+- To check the status of the server, go to `localhost:3090` on the browser.
