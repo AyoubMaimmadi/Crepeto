@@ -49,16 +49,16 @@ phone VARCHAR(255)
 
 CREATE TABLE product (
 product_id SERIAL PRIMARY KEY,
-name VARCHAR(255),
+product_name VARCHAR(255),
 quantity INTEGER,
 price FLOAT(10),
 supplier_id INTEGER REFERENCES supplier(supplier_id)
 );
 
-CREATE TABLE order_details (
+CREATE TABLE orders (
 order_id SERIAL PRIMARY KEY,
+order_name VARCHAR(255),
 order_date DATE,
-order_time DATE,
 product_quantity INTEGER,
 customer_id INTEGER REFERENCES customer(customer_id),
 product_id INTEGER REFERENCES product(product_id)
