@@ -205,7 +205,7 @@ function Orders() {
           Get Order Dates
         </Button>
         <Button variant="contained" size="medium" onClick={getCustomerProducts}>
-          Search Customer Products
+          Get order products
         </Button>
       </Grid>
 
