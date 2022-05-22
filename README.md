@@ -2,7 +2,7 @@
 
 ![](client/public/homepage.PNG)
 
-## Database Project using React: (Material UI / PosgreSQL)
+## Database Project using React: (Material UI/PosgreSQL)
 
 ## Allows the manager the have full managerial control over his business
 
