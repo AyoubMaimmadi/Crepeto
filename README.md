@@ -6,7 +6,7 @@
 
 ## Allows the manager the have full managerial control over his business
 
-### He can Add, Delete, manage and Search Orders, Customer, Suppliers, Employees, and Billing.
+### The manager or admin can Add, Delete, manage and Search Orders, Customer, Suppliers, Employees, and Billing.
 
 To use/view this system you need to:
 
