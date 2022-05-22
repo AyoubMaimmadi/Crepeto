@@ -2,11 +2,11 @@
 
 ![](client/public/homepage.PNG)
 
-## Database Project using React: (JS/MUI/PSQL/...)
+## Database Project using React: (Material UI / PosgreSQL)
 
 ## Allows the manager the have full managerial control over his business
 
-### He can Add, Delete, and Search Orders, Customer, Suppliers, and Employees
+### He can Add, Delete, manage and Search Orders, Customer, Suppliers, Employees, and Billing.
 
 To use/view this system you need to:
 
@@ -18,9 +18,9 @@ To use/view this system you need to:
 
 4- open terminal and run:
 
-##### - `npm or yarn install` to install node modules in client + server
+##### - `npm or yarn install` to install node modules in client + server folders
 
-##### - `npm or yarn start` to open in localhost -> client: 3000, server: 3090
+##### - `npm or yarn start` to open development in localhost -> client: 3000, server: 3090
 
 5- Set up PSQL database and create tables
 
@@ -74,7 +74,7 @@ salary VARCHAR(255)
 );
 ```
 
-### You can view this website using the link https://crepeto.netlify.app/
+### View website -> https://crepeto.netlify.app/
 
 ### You can see this website's API using the link https://crepeto-api.herokuapp.com/
 
