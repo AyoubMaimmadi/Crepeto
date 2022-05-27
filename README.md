@@ -74,8 +74,4 @@ salary VARCHAR(255)
 );
 ```
 
-### View website -> https://crepeto.netlify.app/
-
-### You can see this website's API using the link https://crepeto-api.herokuapp.com/
-
-##### API not public yet, still in production
+### View website -> https://crepeto.vercel.app/
