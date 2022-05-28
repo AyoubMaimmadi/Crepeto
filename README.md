@@ -1,8 +1,8 @@
 # Crepeto
 
-![](client/public/homepage.PNG)
-
 ##### View client -> https://crepeto.vercel.app/
+
+![](client/public/homepage.PNG)
 
 ## Database Project using React: (Material UI/PosgreSQL)
 
