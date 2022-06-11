@@ -2,9 +2,9 @@
 
 ##### View client -> https://crepeto.vercel.app/
 
-![](client/public/homepage.PNG)
-
 ## Database Project using React: (Material UI/PosgreSQL)
+
+![](client/public/homepage.PNG)
 
 ## Allows the manager the have full managerial control over his business
 
