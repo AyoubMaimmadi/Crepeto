@@ -76,4 +76,4 @@ salary VARCHAR(255)
 );
 ```
 
-### View website -> https://crepeto.vercel.app/
+## View website -> https://crepeto.vercel.app/
